@@ -1,12 +1,12 @@
 import React from "react";
 import { GlobalStyle } from "./Components/Styles/Global";
-import Header from "./Components/Header";
 import Light from "./Components/Styles/Light";
 import Dark from "./Components/Styles/Dark";
 import { ThemeProvider } from "styled-components";
 import ConfigMenu from './Components/ConfigMenu';
 import Navbar from './Components/Navbar';
 import User from './Components/User';
+import Header from './Components/Header/Header';
 
 function App() {
   const [theme, setTheme] = React.useState(Light);
@@ -23,7 +23,7 @@ function App() {
           <GlobalStyle />
           <Header color={color}/>
           <ConfigMenu theme={theme}  setTheme={setTheme} color={color} setColor={setColor}/>
-          {/* <Navbar color={color} theme={theme}/> */}
+          <Navbar color={color} theme={theme}/>
           <User color={color}/>
       </ThemeProvider>
     </div>

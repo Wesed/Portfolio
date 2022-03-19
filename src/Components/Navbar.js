@@ -16,9 +16,11 @@ const Nav = styled.nav`
   justify-content: space-around;
   align-items: center;
   background: ${props => props.themeMode};
-  fill: ${props => props.theme.colors.primary};
+  /* fill: ${props => props.theme.colors.primary}; */
+  fill: white;
   padding: 7px;
-  backdrop-filter: blur(4px);
+  /* nao funciona */
+  backdrop-filter: blur(10px);
 `;
 
 const NavMenus = styled.a`
@@ -37,9 +39,9 @@ const Navbar = ({color, theme}) => {
   let themeMode = theme.title;
 
   if(themeMode === 'light') {
-    themeMode = 'rgba(0, 0, 0, 0.6)';
+    themeMode = 'rgba(51, 51, 51, 0.8)';
   } else {
-    themeMode = 'rgba(190, 190, 190, 0.6)';
+    themeMode = 'rgba(51, 51, 51, 0.8)';
   }
   
   return (

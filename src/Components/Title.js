@@ -12,8 +12,7 @@ const SubTitulo = styled.p`
 
 const Titulo = styled.h1`
   font-weight: 700;
-  /* color: ${props => props.color}; */
-  color: ${props => props.theme.text};
+  color: ${props => props.theme.colors.text};
   text-transform: capitalize;
   position: relative;
   text-align: center;
