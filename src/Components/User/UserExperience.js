@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Title from "../Useful/Title";
 import UseHex from "./../Hooks/UseHex";
-import {ReactComponent as Arrow} from '../../Assets/arrow.svg';
+import UserItem from "./UserItem";
 
 const ExperienceContainer = styled.section`
   margin-top: 5rem;
@@ -13,7 +13,7 @@ const ExperienceContainer = styled.section`
     position: absolute;
     content: "";
     left: 29.36rem;
-    bottom: 4.7rem;
+    bottom: 4.8rem;
     display: block;
     background: ${(props) => props.color};
     width: 30px;
@@ -23,13 +23,28 @@ const ExperienceContainer = styled.section`
   :after {
     position: absolute;
     content: "";
-    left: 14.93rem;
-    bottom: 21rem;
+    left: 13.18rem;
+    bottom: 22.8rem;
     display: block;
     background: ${(props) => props.color};
-    width: 32.5rem;
-    height: 3.3px;
+    width: 36rem;
+    height: 3.48px;
     transform: rotate(90deg);
+  }
+
+  span {
+    position: absolute;
+    left: 497px;
+    top: 50px; 
+    display: block;
+    background: transparent;
+    border: 3px solid ${(props) => props.color};
+    border-bottom: none;
+    /* border-left: none; */
+    border-radius: 50% 50% 0 0;
+    /* transform: rotate(-5deg); */
+    width: 16px;
+    height: 23px;
   }
 `;
 
@@ -53,100 +68,11 @@ const ExpItem = styled.div`
   }
 `;
 
-const Item = styled.div`
-  position: relative;
-  /* grid-column: 1; */
-  border-left: 3px solid ${(props) => props.color};
-  padding: 15px 15px 15px 20px;
-  margin: 0 0 -20px 0;
-
-  span {
-    position: absolute;
-    left: 494px;
-    top: -12px; /* -17 */
-    display: block;
-    background: transparent;
-    border: 3px solid ${(props) => props.color};
-    border-bottom: none;
-    /* border-left: none; */
-    border-radius: 50% 50% 0 0;
-    /* transform: rotate(-5deg); */
-    width: 16px;
-    height: 23px;
-  }
-
-  h3 {
-    :before {
-      position: absolute;
-      left: -7px;
-      top: 25px;
-      content: "";
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      z-index: 999;
-      background: ${(props) => props.theme.colors.text};
-    }
-  }
-
-  p {
-    max-height: 150px;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-
-    // chrome, safaria & Opera
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    text-align: justify;
-    font-weight: 300;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    opacity: 0.9;
-
-    :before {
-      position: absolute;
-      content: attr(data-date);
-      width: 25%;
-      padding-bottom: 2px;
-      text-align: center;
-      white-space: pre-wrap;
-      font-weight: 700;
-      left: -132px;
-      top: 22px;
-      color: ${(props) => props.theme.colors.text};
-      border-bottom: 1px solid ${(props) => props.color};
-      font-size: 0.7rem;
-    }
-
-    u {
-      text-decoration: none;
-      border-bottom: 1px solid ${(props) => props.rgba};
-      margin-left: 10px;
-    }
-  }
-
-  svg {
-    position: absolute;
-    right: -25px;
-    bottom: 25px;
-    width: 16px;
-    height: 16px;
-    opacity: .8;
-    fill: ${props => props.color};
-    animation: arrowUp 1s infinite;
-    display: none;
-  }
-`;
-
 const UserExperience = ({ color }) => {
   const rgba = UseHex(color, 0.8);
   const currentJob = "Marc 2022 : Em andamento".replace(":", "\n");
 
-  React.useEffect(() => {
+  // React.useEffect(() => {
     // const divItem = document.getElementsByClassName('divItem')[2];
     // const pItem = divItem.querySelector('p');
     // const setSvg = divItem.querySelector('svg');
@@ -158,13 +84,7 @@ const UserExperience = ({ color }) => {
       // pItem.addEventListener('scroll', () => {
       //   setSvg.style.display = 'none';
       // });
-  }, []);
-
-  function handleFocus({target}) {
-    alert(target);
-    // if(pItem.scrollHeight > 150) setSvg.style.display = 'flex';
-    // else setSvg.style.display = 'none';
-  }
+  // }, []);
 
 
 
@@ -173,12 +93,10 @@ const UserExperience = ({ color }) => {
       <Title color={color} label="Os meus últimos projetos">
         Minha experiência
       </Title>
+      <span></span>
 
       <ExpItem>
-        <Item color={color} rgba={rgba} className="divItem" >
-          <span></span>
-          <h3> Dogs</h3>
-          <p data-date={currentJob} className="pItem">
+        <UserItem color={color} rgba={rgba} title="Dogs" currentJob={currentJob} item={0}>
             O projeto Dogs é uma rede social fictícia para cachorros, foi
             desenvolvido durante os estudos de ReactJs. Algumas funcionalidades
             gerais do React usadas foram:
@@ -190,70 +108,55 @@ const UserExperience = ({ color }) => {
             <br />
             Também utilizei a biblioteca 
             <u>Victory</u> para gerar gráficos, além de consumir uma API externa de teste para cadastro e busca de fotos, comentários, usuários, etc.
-          </p>
-          <Arrow />
-        </Item>
+        </UserItem>
 
-        <Item color={color}>
-          <h3> Dogs </h3>
-          <p data-date={"Fev 2022 - Mar 2022"}>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English.
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English.
-          </p>
-          <Arrow />
-        </Item>
+        <UserItem color={color} rgba={rgba} title="Dogs" currentJob='Jun 2021 - Ago 2021' item={1}>
+            O projeto Dogs é uma rede social fictícia para cachorros, foi
+            desenvolvido durante os estudos de ReactJs. Algumas funcionalidades
+            gerais do React usadas foram:
+            <u>React Hooks,</u>
+            <u>Styled Components,</u>
+            <u>React Router Dom,</u>
+            <u>Lazy & Suspense,</u>
+            <u>Protected Route.</u>
+            <br />
+            Também utilizei a biblioteca 
+            <u>Victory</u> para gerar gráficos, além de consumir uma API externa de teste para cadastro e busca de fotos, comentários, usuários, etc.
+        </UserItem>
 
-        <Item color={color}>
-          <h3> Lalakids&Teen </h3>
-          <p data-date="Jun 2021 - Jul 2021">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English.
-          </p>
-        </Item>
+        <UserItem color={color} rgba={rgba} title="Dogs" currentJob='Jun 2021 - Ago 2021' item={2}>
+            O projeto Dogs é uma rede social fictícia para cachorros, foi
+            desenvolvido durante os estudos de ReactJs. Algumas funcionalidades
+            gerais do React usadas foram:
+            <u>React Hooks,</u>
+            <u>Styled Components,</u>
+            <u>React Router Dom,</u>
+            <u>Lazy & Suspense,</u>
+            <u>Protected Route.</u>
+            <br />
+            Também utilizei a biblioteca 
+            <u>Victory</u> para gerar gráficos, além de consumir uma API externa de teste para cadastro e busca de fotos, comentários, usuários, etc.
+        </UserItem>
 
-        <Item color={color}>
-          <h3> Lalakids&Teen </h3>
-          <p data-date="Jun 2021 - Jul 2021">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English.
-          </p>
-        </Item>
+        <UserItem color={color} rgba={rgba} title="Dogs" currentJob='Jun 2021 - Ago 2021' item={3}>
+            O projeto Dogs é uma rede social fictícia para cachorros, foi
+            desenvolvido durante os estudos de ReactJs. Algumas funcionalidades
+            gerais do React usadas foram:
+            <u>React Hooks,</u>
+            <u>Styled Components,</u>
+            <u>React Router Dom,</u>
+            <u>Lazy & Suspense,</u>
+            <u>Protected Route.</u>
+            <br />
+            Também utilizei a biblioteca 
+            <u>Victory</u> para gerar gráficos, além de consumir uma API externa de teste para cadastro e busca de fotos, comentários, usuários, etc.
+        </UserItem>
 
-        <Item color={color}>
-          <h3> Lalakids&Teen </h3>
-          <p data-date="Jun 2021 - Jul 2021">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English.
-          </p>
-        </Item>
+        <UserItem color={color} rgba={rgba} title="Dogs" currentJob='Jun 2021 - Ago 2021' item={4}>
+            O projeto Dogs é uma rede social fictícia para cachorros, foi
+            desenvolvido durante os estudos de ReactJs. 
+        </UserItem>
 
-        <Item color={color}>
-          <h3> Lalakids&Teen </h3>
-          <p data-date="Jun 2021 - Jul 2021">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English.
-          </p>
-        </Item>
       </ExpItem>
     </ExperienceContainer>
   );
