@@ -1,7 +1,7 @@
 import React from "react";
 
 // E responsavel por receber um hexadecimal e converter pra RGBA
-const UseHex = (hex) => {
+const UseHex = (hex, opacity) => {
   const [rgba, setRgba] = React.useState(null);
   React.useEffect(() => {
     function hexToRgba(hex) {
@@ -13,13 +13,13 @@ const UseHex = (hex) => {
         }
         c = "0x" + c.join("");
         return (
-          setRgba("rgba(" + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(",") + ",1)")
+          setRgba("rgba(" + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(",") + ", " + opacity + ")")
         );
       }
       throw new Error("Bad Hex");
     }
     hexToRgba(hex);
-  }, [rgba, hex]);
+  }, [rgba, hex, opacity]);
 
   return rgba;
 };

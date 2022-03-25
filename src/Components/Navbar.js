@@ -20,7 +20,8 @@ const Nav = styled.nav`
   fill: white;
   padding: 7px;
   /* nao funciona */
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
+  z-index: 999;
 `;
 
 const NavMenus = styled.a`
@@ -30,7 +31,7 @@ const NavMenus = styled.a`
     cursor: pointer;
     border-radius: 50%;
     background: ${props => props.color};
-    fill: ${props => props.theme.colors.primary};
+    fill: white;
     transition: .1s;
   }
 `
@@ -41,7 +42,7 @@ const Navbar = ({color, theme}) => {
   if(themeMode === 'light') {
     themeMode = 'rgba(51, 51, 51, 0.8)';
   } else {
-    themeMode = 'rgba(51, 51, 51, 0.8)';
+    themeMode = 'rgba(21, 21, 21, 0.8)';
   }
   
   return (

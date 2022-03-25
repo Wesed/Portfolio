@@ -16,28 +16,28 @@ const Titulo = styled.h1`
   text-transform: capitalize;
   position: relative;
   text-align: center;
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
 
   ::before {
     position: absolute;
     content: '';
     height: 40px;
     width: 5px;
-    bottom: -25px;
+    bottom: -15px;
     transform: rotate(90deg);
     z-index: -1;
     display: inline-block;
     background: ${props => props.color};
     opacity: 0.8;
-    /* box-shadow: -7px 0 0 0 ${props => props.color},
-                -7px 10px 0 0 ${props => props.color},
-                -7px -10px 0 0 ${props => props.color}; */
   }
 `
 
 const Title = ({color, label, children}) => {
   return <>
-    <Titulo color={color}>{children}</Titulo>
-    <SubTitulo>{label}</SubTitulo>
+    <Titulo color={color}>{children}
+      <SubTitulo>{label}</SubTitulo>
+    </Titulo>
   </>
 }
 

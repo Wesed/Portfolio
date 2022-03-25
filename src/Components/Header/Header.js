@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import SkillsShortcuts from './SkillsShortcuts';
 import UseHex from './../Hooks/UseHex';
 
-const ProfileContainer = styled.section`
+const HeaderContainer = styled.section`
   position: relative;
   margin-top: 5rem;
   display: flex;
@@ -11,12 +11,10 @@ const ProfileContainer = styled.section`
   align-items: center;
   height: calc(100vh - 10rem);
   margin-bottom: 10rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `
 
-const ProfileText = styled.div`
-  /* line-height: 2rem; */
-  /* margin: 30px; */
+const TextContainer = styled.div`
   text-align: center;
   font-weight: 300;
 `
@@ -42,56 +40,20 @@ const HeaderSubtitle = styled.p`
   background: ${props => props.theme.colors.primary};
 `
 
-const ProfileImg = styled.div`
-  width: 350px;
-  height: 450px;
-  padding: 0 40px 40px 40px;
-  position: relative;
-
-  ::before {
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-top: 10px solid ${props => props.color};
-    border-left: 10px solid ${props => props.color};
-    left: -15px;
-    top: -35px;
-    transition: .1s;
-  }
-
-  ::after {
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-bottom: 10px solid ${props => props.color};
-    border-right: 10px solid ${props => props.color};
-    right: -5px;
-    bottom: 65px;
-    transition: .1s;
-  }
-`
-
 const Header = ({color}) => {
-  const rgba = UseHex(color);
+  const rgba = UseHex(color, 1);
 
   return <>
     <header className='container'>
-        <ProfileContainer>
-          <SkillsShortcuts />
-          <ProfileText>
+        <HeaderContainer>
+          <SkillsShortcuts color={color}/>
+          <TextContainer>
             <HeaderTitle color={rgba}>Weslley Eduardo</HeaderTitle>
             {/* efeito digitacao (web / react / js) */}
             <HeaderSubtitle color={rgba}> Desenvolvedor Web </HeaderSubtitle>
-            {/* <p style={{fontSize: '.9rem'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p> */}
-          </ProfileText>
+          </TextContainer>
 
-        </ProfileContainer>
-
-        {/* <ProfileImg color={color}>
-              <img src="https://user-images.githubusercontent.com/52588477/158433544-e869ce81-06fb-4792-9895-819b388d4377.jpg" alt="profile" />
-          </ProfileImg> */}
+        </HeaderContainer>
 
     </header>
     </>

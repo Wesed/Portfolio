@@ -59,6 +59,7 @@ img {
   background: ${props => props.theme.colors.text};
   fill: ${props => props.theme.colors.primary};
   transition: .1s;
+  cursor: pointer;
 }
 
 .animeRight {
@@ -79,8 +80,14 @@ img {
   height: 16px;
 }
 
-.active {
-  background: currentColor;
+@keyframes arrowUp {
+  to {
+    bottom: 25px;
+  }
+
+  from {
+    bottom: 35px;
+  }
 }
 
 `

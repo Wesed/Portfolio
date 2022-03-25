@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { ReactComponent as Dark } from "../Assets/moon.svg";
 import { ReactComponent as Light } from "../Assets/sun.svg";
 import { ReactComponent as Config } from "../Assets/gear.svg";
@@ -10,16 +10,32 @@ import DarkTheme from "./Styles/Dark";
 const Configuration = styled.div`
   position: absolute;
   display: flex;
-  top: 100px;
-  right: 15px;
+  top: 35%;
+  transform: translateY(-35%); 
+  left: 175px;
+  ${props => props.configPosition && css`
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 20px;
+  `};
   gap: 20px;
+  transition: .1s;
 `;
 
-const BtnConfig = styled.div`
+const IconConfig = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 `;
+
+const BtnConfig = styled.button`
+  border: 1px solid transparent;
+  outline: none;
+  background: none;
+  margin: 5px 0 0 0;
+`
 
 const ColorsConfig = styled.div`
   text-align: center;
@@ -57,6 +73,7 @@ const ColorItem = styled.span`
 
 const ConfigMenu = ({theme, setTheme, color, setColor }) => {
   const [config, setConfig] = React.useState(null);
+  const [configPosition, setConfigPosition] = React.useState(null);
 
   const colorList = ["#FE3525", "#FF7105", "#239583", "#0B52C0", "#FF56B8"];
 
@@ -68,21 +85,37 @@ const ConfigMenu = ({theme, setTheme, color, setColor }) => {
     });
   }, [config]);
 
+
+
+    React.useEffect( () => {
+        window.addEventListener('scroll', (e) => {
+          let positionStatus = window.scrollY;
+          if(positionStatus > 260) {
+            setConfigPosition(true);
+          } else {
+            setConfigPosition(false);
+          }
+        });
+    }, [configPosition]);
+
+
   return (
-    <Configuration id="config">
+    <Configuration configPosition={configPosition} id="config">
       {/* ver se dps de tudo ainda é necessario */}
       <GlobalStyle color={color} />
 
-      {/* classe foi necessario pq os icones precisam de um estilo igual pra todos eles, e nao so pra um unico */}
-      <BtnConfig className="btnConfig">
-        <a href="#" onClick={() => {setTheme(theme.title === 'light' ? DarkTheme : LightTheme)}}>
-          {theme.title === "light" ? <Dark /> : <Light />}
-        </a>
 
-        <a href="#" onClick={() => setConfig(!config)}>
+      {/* classe foi necessario pq os icones precisam de um estilo igual pra todos eles, e nao so pra um unico */}
+      <IconConfig className="btnConfig">
+        <BtnConfig onClick={() => {setTheme(theme.title === 'light' ? DarkTheme : LightTheme)}}>
+          {theme.title === "light" ? <Dark /> : <Light />}
+        </BtnConfig>
+
+        <BtnConfig onClick={() => setConfig(!config)}>
+
           <Config />
-        </a>
-      </BtnConfig>
+        </BtnConfig>
+      </IconConfig>
 
       {config && (
         <ColorsConfig className="animeRight">
