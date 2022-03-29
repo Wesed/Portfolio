@@ -5,14 +5,13 @@ import {ReactComponent as Clients} from '../../Assets/clients.svg';
 import {ReactComponent as Projects} from '../../Assets/project.svg';
 import UseHex from '..//Hooks/UseHex';
 import Title from '../Useful/Title';
+import { ReactComponent as Download } from "../../Assets/download.svg";
 
 const UserContainer = styled.section`
-  /* border: 1px solid red; */
   margin-top: 5rem;
   display: grid;
   grid-template-columns: 35% 60%;
-  gap: 50px;
-  margin-bottom: 10rem;
+  column-gap: 50px;
   `
 
 const ProfileImg = styled.div`
@@ -70,7 +69,6 @@ const ProfileImg = styled.div`
 `
 
 const ProfileContainer = styled.div`
-  /* border: 1px solid white; */
   grid-row: 2;
   display: flex;
   justify-content: end;
@@ -94,6 +92,7 @@ const ProfileMenu = styled.div`
     width: 24px;
     height: 24px;
     fill: white;
+    fill: ${props => props.theme.colors.text};
   }
 
   p {
@@ -103,6 +102,7 @@ const ProfileMenu = styled.div`
   p:first-of-type {
     font-weight: 700;
     color: white;
+    color: ${props => props.theme.colors.text};
   }
 
   p:nth-child(3) {
@@ -126,6 +126,8 @@ const ProfileMenu = styled.div`
     }
   }
 ` 
+
+
 const ProfileText = styled.p`
   flex-wrap: wrap;
   width: 84%;
@@ -134,8 +136,35 @@ const ProfileText = styled.p`
   font-weight: 300;
 `
 
+
+const ButtonCV = styled.button`
+  display: flex;
+  align-items: center;
+  border: none;
+  background: ${props => props.theme.colors.primary};
+  background-image: linear-gradient(-125deg, transparent, 
+    ${props => props.color});
+  padding: 1rem;
+  gap: 10px;
+  border-radius: 10px;
+  color: ${props => props.theme.colors.text};
+  font-weight: 700;
+  margin: auto;
+
+  :hover {
+    background: transparent;
+    box-shadow: 1px 1px 5px 1px ${props => props.color};
+    cursor: pointer;
+  }
+
+  svg {
+    width: 16px;
+    fill: ${props => props.theme.colors.text};
+  }
+`
+
 const User = ({color}) => { 
-  const rgba = UseHex(color);
+  const rgba = UseHex(color, 1);
   
   return (
     <UserContainer className="container">
@@ -155,8 +184,7 @@ const User = ({color}) => {
       <ProfileContainer>
         <ProfileMenu color={color}>
           <span>
-            {" "}
-            <Experience />{" "}
+            <Experience />
           </span>
           <p> Experiência </p>
           <p> 3 anos </p>
@@ -164,8 +192,7 @@ const User = ({color}) => {
 
         <ProfileMenu color={color}>
           <span>
-            {" "}
-            <Clients />{" "}
+            <Clients />
           </span>
           <p> Clientes </p>
           <p> 2 Avaliações</p>
@@ -173,8 +200,7 @@ const User = ({color}) => {
 
         <ProfileMenu color={color}>
           <span>
-            {" "}
-            <Projects />{" "}
+            <Projects />
           </span>
           <p> Projetos </p>
           <p> Finalizados e em andamento</p>
@@ -186,6 +212,8 @@ const User = ({color}) => {
           it over 2000 years old. Richard McClintock, a Latin professor at
           Hampden-Sydney College in Virginia
         </ProfileText>
+
+        <ButtonCV color={color}>Download CV <Download /> </ButtonCV>
       </ProfileContainer>
     </UserContainer>
   );

@@ -1,15 +1,6 @@
 import React from 'react';
 import  styled  from 'styled-components';
 
-const SubTitulo = styled.p`
-  position: relative;
-  bottom: 55px;
-  font-size: 0.8rem;
-  font-weight: 300;
-  opacity: 0.8;
-  text-align: center;
-`
-
 const Titulo = styled.h1`
   font-weight: 700;
   color: ${props => props.theme.colors.text};
@@ -17,7 +8,7 @@ const Titulo = styled.h1`
   position: relative;
   text-align: center;
   grid-column: 1 / -1;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 
   ::before {
     position: absolute;
@@ -29,8 +20,17 @@ const Titulo = styled.h1`
     z-index: -1;
     display: inline-block;
     background: ${props => props.color};
-    opacity: 0.8;
+    /* opacity: 0.8; */
   }
+`
+
+const SubTitulo = styled.p`
+  position: relative;
+  bottom: 55px;
+  font-size: 0.8rem;
+  font-weight: 300;
+  opacity: 0.8;
+  text-align: center;
 `
 
 const Title = ({color, label, children}) => {
