@@ -11,7 +11,6 @@ const HeaderContainer = styled.section`
   align-items: center;
   height: calc(100vh - 10rem);
   margin-bottom: 10rem;
-  /* border: 1px solid red; */
 `
 
 const TextContainer = styled.div`

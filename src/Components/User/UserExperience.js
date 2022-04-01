@@ -1,86 +1,117 @@
 import React from "react";
 import styled from "styled-components";
 import Title from "../Useful/Title";
-import UseHex from "./../Hooks/UseHex";
-import UserItem from "./UserItem";
+import { ReactComponent as Work } from "../../Assets/work.svg";
+import { ReactComponent as Formacao } from "../../Assets/formacao.svg";
+import UserWork from './UserWork';
+import UserFormacao from './UserFormacao';
 
 const ExperienceContainer = styled.section`
+  /* border: 1px solid blue; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
   margin-top: 5rem;
-  position: relative;
   margin-bottom: 800px;
-  /* border: 1px solid white; */
+`;
 
-  :before {
-    position: absolute;
-    content: "";
-    left: 27.8rem;
-    bottom: -20px;
-    display: block;
-    background: ${(props) => props.color};
-    width: 30px;
-    height: 3px;
-  }
-
-  /* :after {
-    position: absolute;
-    content: "";
-    left: 20.18rem;
-    bottom: 15.8rem;
-    display: block;
-    background: ${(props) => props.color};
-    width: 22rem;
-    height: 3.48px;
-    transform: rotate(90deg);
-  } */
-
-  span {
-    position: absolute;
-    left: 472px;
-    top: 80px; 
-    display: block;
-    background: transparent;
-    border: 3px solid ${(props) => props.color};
-    border-bottom: none;
-    /* border-radius: 50% 50% 0 0; */
-    width: 16px;
-    height: 23px;
-  }
+const ButtonsDiv = styled.div`
+  display: flex;
+  grid-column: 1 / -1;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 `;
 
 const ExpItem = styled.div`
+  /* border: 1px solid blue; */
+  /* position: relative; */
+  width: 40rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc(50% - 80px), auto));
-  gap: 20px 10px;
-  /* column-gap: 60px; */
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1 / -1;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  column-gap: 2rem;
+`;
 
-  div:nth-child(even) {
-    p {
-      :before {
-        position: absolute;
-        content: attr(data-date);
-        display: inline-block;
-        left: 200px;
-        text-align: center;
-      }
+const Btn = styled.button`
+  display: flex;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  color: ${(props) => props.status ? props.color : props.theme.colors.textOpacity};
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-weight: 700;
+
+  :first-child {
+    border-right: 2px solid ${(props) => props.theme.colors.textOpacity};
+  }
+
+  :hover {
+    cursor: pointer;
+    color: ${(props) => props.color};
+
+    svg {
+      fill: ${(props) => props.color};
     }
+  }
+
+  svg {
+    fill: ${(props) => props.status ? props.color : props.theme.colors.textOpacity};
+    width: 16px;
   }
 `;
 
 const UserExperience = ({ color }) => {
-  const rgba = UseHex(color, 0.8);
-  const timeJob = "Marc 2022 : Em andamento".replace(":", "\n");
+  const [work, setWork] = React.useState(true);
+  const [formacao, setFormacao] = React.useState(false);
+  // const rgba = UseHex(color, 0.8);
+  // const timeJob = "Marc 2022 : Em andamento".replace(":", "\n");
 
+  React.useEffect( () => {  
+    const work = document.getElementById('workBtn');
+    const formacao = document.getElementById('FormacaoBtn');
+
+    work.addEventListener('mouseover', () => {
+      setWork(true); 
+      setFormacao(false);
+    });
+
+    formacao.addEventListener('mouseover', () => {
+      setWork(false); 
+      setFormacao(true);
+    });
+  }, []);
 
   return (
     <ExperienceContainer color={color} className="container">
       <Title color={color} label="Os meus últimos projetos">
         Minha experiência
       </Title>
-      
-      <span></span>
+
+      <ButtonsDiv>
+        <Btn
+        status = {work}
+        id='workBtn'
+        color={color}> Experiências <Work />
+       </Btn>
+
+        <Btn
+          status = {formacao}
+          id='FormacaoBtn'
+          color={color}> Formação <Formacao />
+        </Btn>
+      </ButtonsDiv>
 
       <ExpItem>
 
+        {work && <UserWork style={{color: `${props => props.color}`}} color={color}/>}
+        {formacao && <UserFormacao color={color}  />}
+
+      </ExpItem>
+
+      {/* 
       <UserItem color={color} rgba={rgba} 
       title="Animaly Petshop" 
       timeJob={timeJob} 
@@ -109,9 +140,7 @@ const UserExperience = ({ color }) => {
 
         <UserItem color={color} rgba={rgba} title="Lalakids & Teen" timeJob='Jun 2021 - Ago 2021' item={2}>
         Por conta da pandemia, o cliente se queixou da queda de rendimentos da loja. Sugeri portanto que exibisse seus produtos em um site, numa especie de <u>vitrine virtual</u>, onde os clientes poderiam ver e comprar sem sair de casa. Após a conclusão do site, sugeri ao cliente um sistema web, afim de gerenciar as publicações, estoque, caixa (entrada e saída), funcionários, dados dos clientes, relatórios, etc. 
-        </UserItem>
-
-      </ExpItem>
+        </UserItem> */}
     </ExperienceContainer>
   );
 };
