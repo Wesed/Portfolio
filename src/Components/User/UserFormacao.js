@@ -9,39 +9,53 @@ const UserFormacao = ({ color }) => {
         title="Engenharia de Software"
         description="Curso superior"
         company="Unifae"
+        type="Graduacao"
         date="2016 - 2019"
       />
 
       <UserItem
         color={color}
-        title="Engenharia de Software"
-        description="Curso superior"
-        company="Unifae"
-        date="2016 - 2019"
+        title="Scrum Fundamentals Certified"
+        description="Certificação"
+        company="ScrumStudy"
+        type="Certificacao"
+        date="Novembro - 2021"
       />
 
       <UserItem
         color={color}
-        title="Engenharia de Software"
-        description="Curso superior"
-        company="Unifae"
-        date="2016 - 2019"
+        title="CSS SASS"
+        description="Certificado"
+        company="Origamid"
+        type="Certificacao"
+        date="Abril - 2022"
       />
 
       <UserItem
         color={color}
-        title="Engenharia de Software"
-        description="Curso superior"
-        company="Unifae"
-        date="2016 - 2019"
+        title="ReactJs Completo"
+        description="Certificado"
+        company="Origamid"
+        type="Certificacao"
+        date="Março - 2022"
       />
 
       <UserItem
         color={color}
-        title="Engenharia de Software"
-        description="Curso superior"
-        company="Unifae"
-        date="2016 - 2019"
+        title="Css Grid Layout"
+        description="Certificado"
+        company="Origamid"
+        type="Certificacao"
+        date="Janeiro - 2022"
+      />
+
+      <UserItem
+        color={color}
+        title="Css Flexbox"
+        description="Certificado"
+        company="Origamid"
+        type="Certificacao"
+        date="Maio - 2020"
       />
     </>
   );

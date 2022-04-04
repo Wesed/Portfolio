@@ -35,6 +35,7 @@ const ExpItem = styled.div`
 `;
 
 const Btn = styled.button`
+  position: relative;
   display: flex;
   gap: 10px;
   background: transparent;
@@ -44,8 +45,14 @@ const Btn = styled.button`
   padding: 1rem 2rem;
   font-weight: 700;
 
-  :first-child {
-    border-right: 2px solid ${(props) => props.theme.colors.textOpacity};
+  :first-child:after {
+    position: absolute;
+    content: '';
+    top: .5rem;
+    left: 11.72rem;
+    width: .125rem;
+    height: 2rem;
+    background: ${(props) => props.theme.colors.textOpacity};
   }
 
   :hover {

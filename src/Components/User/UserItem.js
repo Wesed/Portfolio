@@ -5,6 +5,12 @@ import {ReactComponent as ReactIcon} from '../../Assets/react.svg';
 import {ReactComponent as Html} from '../../Assets/html5.svg';
 import {ReactComponent as Css} from '../../Assets/css3.svg';
 import {ReactComponent as Calendar} from '../../Assets/calendar.svg';
+import {ReactComponent as Freelance} from '../../Assets/briefcase.svg';
+import {ReactComponent as CompanyIcon} from '../../Assets/company.svg';
+import {ReactComponent as Voluntario} from '../../Assets/voluntary.svg';
+import {ReactComponent as Graduacao} from '../../Assets/graduation.svg';
+import {ReactComponent as Curso} from '../../Assets/medal.svg';
+import {ReactComponent as Estudo} from '../../Assets/study.svg';
 
 const Item = styled.div`
   position: relative;
@@ -26,6 +32,8 @@ const Item = styled.div`
   :nth-child(even) {
     grid-column: 2;
     margin-left: 3rem;
+    /* os itens da direita pode crescer inifto a direita */
+    width: 100%;
     
     :after
      {
@@ -42,8 +50,15 @@ const Item = styled.div`
   }
 
   p {
-    padding: .2rem 0;
+    padding: .3rem 0;
   }
+
+  svg {
+    width: 10px;
+    fill: ${props => props.theme.colors.text};
+    margin-right: .2rem;
+  }
+
 `;
 
 // const Skills = styled.div`
@@ -70,26 +85,62 @@ const Description = styled.p`
   font-size: .8rem;
 `; 
 
+const Company = styled.p`
+    font-size: .8rem;
+
+    svg {
+      margin-right: .1rem;
+      width: 15px;
+    }
+`
+
 const Date = styled.p`
   font-weight: 300;
   font-size: .7rem;
-  opacity: .8;
   margin-top: 1rem;
 
   svg {
-    width: 10px;
-    fill: ${props => props.theme.colors.text};
+    opacity: .8;
   }
 `;
 
 
-const UserItem = ({item, title, description, date, color, rgba, ...props}) => {
+const UserItem = ({item, title, description, company, type, date, color, rgba, ...props}) => {
+  let typeData = 'null';
+
+    switch(type) {
+      case 'Freelance':
+        typeData = <Freelance/>;
+        break;
+
+        case 'Voluntario':
+        typeData = <Voluntario/>;
+        break;
+
+        case 'Certificacao':
+        typeData = <Curso/>;
+        break;
+
+        case 'Graduacao':
+        typeData = <Graduacao/>;
+        break;
+
+        case 'Estudo':
+        typeData = <Estudo/>;
+        break;
+
+        default:
+        typeData = <CompanyIcon/>;
+        break;
+    }
+
 
   return (
     <Item color={color} rgba={rgba}>
-      <Title color={color}>{title}</Title>
-      <Description>{description}</Description>
-      <Date> <Calendar /> {date}</Date>
+      <Title color={color}> {title} </Title>
+      <Description> {description} </Description>
+      <Company> {typeData} {company} </Company>
+      <Date> <Calendar /> {date} </Date>
 
        {/* <Arrow /> */}
 

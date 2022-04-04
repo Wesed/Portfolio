@@ -144,11 +144,12 @@ const ButtonCV = styled.button`
   background: ${props => props.theme.colors.primary};
   background-image: linear-gradient(-125deg, transparent, 
     ${props => props.color});
-  padding: 1rem;
+  padding: 1rem 2rem;
   gap: 10px;
   border-radius: 10px;
   color: ${props => props.theme.colors.text};
   font-weight: 700;
+  font-size: 1rem;
   margin: auto;
 
   :hover {
@@ -192,18 +193,18 @@ const User = ({color}) => {
 
         <ProfileMenu color={color}>
           <span>
-            <Clients />
-          </span>
-          <p> Clientes </p>
-          <p> 2 Avaliações</p>
-        </ProfileMenu>
-
-        <ProfileMenu color={color}>
-          <span>
             <Projects />
           </span>
           <p> Projetos </p>
           <p> Finalizados e em andamento</p>
+        </ProfileMenu>
+
+        <ProfileMenu color={color}>
+          <span>
+            <Clients />
+          </span>
+          <p> Clientes </p>
+          <p> 2 Avaliações</p>
         </ProfileMenu>
 
         <ProfileText>
@@ -213,7 +214,7 @@ const User = ({color}) => {
           Hampden-Sydney College in Virginia
         </ProfileText>
 
-        <ButtonCV color={color}>Download CV <Download /> </ButtonCV>
+        <ButtonCV download="../../Assets/curriculo.pdf" color={color}>Download CV <Download /> </ButtonCV>
       </ProfileContainer>
     </UserContainer>
   );

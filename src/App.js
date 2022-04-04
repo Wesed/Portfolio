@@ -24,7 +24,7 @@ function App() {
           <GlobalStyle />
           <Header color={color}/>
           <ConfigMenu theme={theme}  setTheme={setTheme} color={color} setColor={setColor}/>
-          {/* <Navbar color={color} theme={theme}/> */}
+          <Navbar color={color} theme={theme}/>
           <User color={color}/> 
           <UserExperience color={color} />
       </ThemeProvider>
