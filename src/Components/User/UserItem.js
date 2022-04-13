@@ -19,9 +19,10 @@ const Item = styled.div`
   margin-left: 3.4rem;
 
   :not(:last-child):after {
+    /* border: 1px solid red; */
     position: absolute;
     content: '';
-    top: 1.2rem;
+    top: 1.12rem;
     right: -2.4rem;
     width: 2px;
     height: 100%;
@@ -37,13 +38,13 @@ const Item = styled.div`
     :after
      {
       right: initial;
-      left: -3.35rem;
+      left: -3.33rem;
     }
 
     p:first-of-type {
       
       :before {
-        left: -3.2rem;
+        left: -3.33rem;
         width: 40px;
         background: linear-gradient(-90deg, ${props => props.color} 15%, ${props => props.theme.colors.text} 100%);
       }

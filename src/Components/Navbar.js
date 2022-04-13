@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as Home } from "../Assets/home.svg";
-import { ReactComponent as User } from "../Assets/user.svg";
+import { ReactComponent as Home } from "../Assets/home2.svg";
+import { ReactComponent as User } from "../Assets/user2.svg";
+import { ReactComponent as Exp } from "../Assets/book2.svg";
 import { ReactComponent as Portfolio } from "../Assets/portfolio.svg";
-import { ReactComponent as Message } from "../Assets/message.svg";
+import { ReactComponent as Message } from "../Assets/message2.svg";
 
 const Nav = styled.nav`
   position: fixed;
@@ -12,29 +13,41 @@ const Nav = styled.nav`
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   background: ${props => props.themeMode};
   /* fill: ${props => props.theme.colors.primary}; */
   fill: white;
-  padding: 7px;
-  /* nao funciona */
-  backdrop-filter: blur(2px);
+  padding: .675rem;
+  backdrop-filter: blur(10px);
   z-index: 999;
 `;
 
-const NavMenus = styled.a`
-  padding: 7px 12px;
+const NavMenu = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-  :hover {
-    cursor: pointer;
-    border-radius: 50%;
-    background: ${props => props.color};
-    fill: white;
-    transition: .1s;
+  li {
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    :hover {
+      cursor: pointer;
+      border-radius: 50%;
+      background: ${props => props.color};
+
+      fill: white;
+      transition: 0.1s;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
   }
-`
+`;
 
 const Navbar = ({color, theme}) => {
   let themeMode = theme.title;
@@ -47,10 +60,13 @@ const Navbar = ({color, theme}) => {
   
   return (
     <Nav theme={theme} themeMode={themeMode} className='navSvg'>
-        <NavMenus color={color}><Home /></NavMenus>
-        <NavMenus color={color}><User /></NavMenus>
-        <NavMenus color={color}><Portfolio /></NavMenus>
-        <NavMenus color={color}><Message /></NavMenus>
+        <NavMenu color={color}>
+          <li><Home/></li>
+          <li><User /></li>
+          <li><Exp /></li>
+          <li><Portfolio /></li>
+          <li><Message /></li>
+        </NavMenu>
     </Nav>
   );
 };

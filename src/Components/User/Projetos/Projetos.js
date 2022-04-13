@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from './../../Useful/Title';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Pagination, Navigation} from 'swiper/core';
+import SwiperCore, {Navigation} from 'swiper/core';
 import { EffectCreative } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-SwiperCore.use([EffectCreative, Pagination, Navigation]);
+SwiperCore.use([EffectCreative, Navigation]);
 
 const ProjetoContainer = styled.section`
   margin-top: 10rem;
@@ -35,17 +35,18 @@ const Slider = styled.div`
 
 
   img {
-    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 50%);
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 30%);
     border-radius: 4px;
   }
 
   a {
     position: relative;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.color};
+    font-weight: 700;
     display: inline-block;
+    transition: .2s;
 
-
-    :before {
+    /* :before {
       position: absolute;
       content: '';
       bottom: 0;
@@ -53,10 +54,14 @@ const Slider = styled.div`
       height: .1rem;
       width: 3.5rem;
       background: ${props => props.color};
-    }
+    } */
+
     :hover {
       font-weight: 700;
-      color: ${props => props.color};
+      padding: .5rem 1rem;
+      background: ${props => props.color};
+      color: white;
+      border-radius: 10px;
     }
   }
 `;
@@ -66,7 +71,7 @@ const Projetos = ({color}) => {
   return (
     <ProjetoContainer>
       <Title color={color} label="Os meus principais trabalhos">
-        Meus projetos
+        Projetos
       </Title>
 
       <Swiper

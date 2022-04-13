@@ -31,7 +31,6 @@ const SubTitulo = styled.p`
   font-size: 0.8rem;
   font-weight: 300;
   opacity: 0.8;
-  text-align: center;
 
   :first-letter {
     text-transform: capitalize;

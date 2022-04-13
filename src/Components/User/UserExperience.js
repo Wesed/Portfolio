@@ -88,7 +88,7 @@ const UserExperience = ({ color }) => {
   return (
     <ExperienceContainer color={color}>
       <Title color={color} label="As minhas experiências e formação">
-        Minha experiência
+        Experiência
       </Title>
 
       <ButtonsDiv>
