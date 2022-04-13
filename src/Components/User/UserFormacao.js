@@ -1,7 +1,7 @@
 import React from "react";
 import UserItem from "./UserItem";
 
-const UserFormacao = () => {
+const UserFormacao = ({color}) => {
   return (
     <>
       <UserItem
@@ -10,6 +10,7 @@ const UserFormacao = () => {
         company="Unifae"
         type="Graduacao"
         date="2016 - 2019"
+        color={color}
       />
 
       <UserItem
@@ -18,6 +19,7 @@ const UserFormacao = () => {
         company="ScrumStudy"
         type="Certificacao"
         date="Novembro - 2021"
+        color={color}
       />
 
       <UserItem
@@ -26,6 +28,7 @@ const UserFormacao = () => {
         company="Origamid"
         type="Certificacao"
         date="Abril - 2022"
+        color={color}
       />
 
       <UserItem
@@ -34,6 +37,7 @@ const UserFormacao = () => {
         company="Origamid"
         type="Certificacao"
         date="Março - 2022"
+        color={color}
       />
 
       <UserItem
@@ -42,6 +46,7 @@ const UserFormacao = () => {
         company="Origamid"
         type="Certificacao"
         date="Janeiro - 2022"
+        color={color}
       />
 
       <UserItem
@@ -50,6 +55,7 @@ const UserFormacao = () => {
         company="Origamid"
         type="Certificacao"
         date="Maio - 2020"
+        color={color}
       />
     </>
   );

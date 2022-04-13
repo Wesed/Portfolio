@@ -30,7 +30,7 @@ const ProfileImg = styled.div`
     position: relative;
     border-radius: 2rem;
     border: 1px solid transparent;
-    transform: rotate(10deg);
+    /* transform: rotate(10deg); */
     overflow: hidden;
 
     :hover {

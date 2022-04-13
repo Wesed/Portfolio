@@ -7,13 +7,11 @@ import { EffectCreative } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import Button from './../../Useful/Button';
 
 SwiperCore.use([EffectCreative, Pagination, Navigation]);
 
 const ProjetoContainer = styled.section`
-  margin-top: 5rem;
-  margin-bottom: 800px;
+  margin-top: 10rem;
 `;
 
 const Slider = styled.div`
@@ -40,12 +38,33 @@ const Slider = styled.div`
     box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 50%);
     border-radius: 4px;
   }
+
+  a {
+    position: relative;
+    color: ${props => props.theme.colors.text};
+    display: inline-block;
+
+
+    :before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: -.2rem;
+      height: .1rem;
+      width: 3.5rem;
+      background: ${props => props.color};
+    }
+    :hover {
+      font-weight: 700;
+      color: ${props => props.color};
+    }
+  }
 `;
 
 const Projetos = ({color}) => {
   
   return (
-    <ProjetoContainer className="">
+    <ProjetoContainer>
       <Title color={color} label="Os meus principais trabalhos">
         Meus projetos
       </Title>
@@ -69,7 +88,7 @@ const Projetos = ({color}) => {
                   <p> O projeto Dogs é uma rede social fictícia para cachorros, foi
                   desenvolvido durante os estudos de ReactJs. </p>
                   
-                  <Button href="https://dogs-git-master-wesed.vercel.app/login" target="_blank" rel="noreferrer" color={color}>Demo</Button>
+                  <a href="https://dogs-git-master-wesed.vercel.app/login" target="_blank" rel="noreferrer">Demo</a>
                 </Slider>
               ) : (
                 <Slider opacity={.5} scale={.8}>
@@ -95,7 +114,7 @@ const Projetos = ({color}) => {
                   <h2>Dogs</h2>
                   <p> O projeto Dogs é uma rede social fictícia para cachorros, foi
                   desenvolvido durante os estudos de ReactJs. </p>
-                  <a target="_blank" rel="noreferrer" href="https://dogs-git-master-wesed.vercel.app/login">Demo</a>
+                  <a href="https://dogs-git-master-wesed.vercel.app/login" target="_blank" rel="noreferrer">Demo</a>
                 </Slider>
               ) : (
                 <Slider opacity={.5} scale={.8}>
@@ -121,7 +140,7 @@ const Projetos = ({color}) => {
                   <h2>Dogs</h2>
                   <p> O projeto Dogs é uma rede social fictícia para cachorros, foi
                   desenvolvido durante os estudos de ReactJs. </p>
-                  <a target="_blank" rel="noreferrer" href="https://dogs-git-master-wesed.vercel.app/login">Demo</a>
+                  <a href="https://dogs-git-master-wesed.vercel.app/login" target="_blank" rel="noreferrer">Demo</a>
                 </Slider>
               ) : (
                 <Slider opacity={.5} scale={.8}>

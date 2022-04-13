@@ -33,11 +33,11 @@ const ButtonStyle = styled.button`
   }
 `
 
-const Button = ({color, children, href, ...props}) => {
+const Button = ({color, children, href, download, ...props}) => {
   return (
       <Link href={href} {...props}>
         <ButtonStyle color={color}>
-          {children} <Download />
+          {children} {download && <Download />}
         </ButtonStyle>
       </Link>
     )

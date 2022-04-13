@@ -1,7 +1,7 @@
 import React from "react";
 import UserItem from './UserItem';
 
-const UserWork = () => {
+const UserWork = ({color}) => {
   return (
     <>
       <UserItem
@@ -10,6 +10,10 @@ const UserWork = () => {
         company="Freelancer"
         type="Freelance"
         date="Março 2022 - Atualmente"
+        color={color}
+        react={true}
+        html={true}
+        css={true}
       />
 
       <UserItem
@@ -18,6 +22,7 @@ const UserWork = () => {
         company="Projeto pessoal"
         type="Estudo"
         date="Março 2022"
+        color={color}
       />
 
       <UserItem
@@ -26,6 +31,7 @@ const UserWork = () => {
         company="Freelancer"
         type="Freelance"
         date="Junho 2021"
+        color={color}
       />
 
       <UserItem
@@ -34,6 +40,7 @@ const UserWork = () => {
         company="InnManager"
         type="Estágio"
         date="Fevereiro / Junho - 2018"
+        color={color}
       />
 
       <UserItem
@@ -42,6 +49,7 @@ const UserWork = () => {
         company="Bixo Bom"
         type="Voluntario"
         date="2016 - 2019"
+        color={color}
       />
 
       <UserItem
@@ -50,6 +58,7 @@ const UserWork = () => {
         company="Projeto Guri"
         type="Voluntario"
         date="Janeiro / Dezembro - 2015"
+        color={color}
       />
 
     </>

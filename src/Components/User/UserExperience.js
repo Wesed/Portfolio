@@ -7,11 +7,9 @@ import UserWork from './UserWork';
 import UserFormacao from './UserFormacao';
 
 const ExperienceContainer = styled.section`
-  /* border: 1px solid blue; */
+  margin-top: 10rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  margin-top: 5rem;
 `;
 
 const ButtonsDiv = styled.div`
@@ -22,14 +20,11 @@ const ButtonsDiv = styled.div`
 `;
 
 const ExpItem = styled.div`
-  /* border: 1px solid blue; */
-  /* position: relative; */
   width: 40rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column: 1 / -1;
   margin: 0 auto;
-  margin-bottom: 2rem;
   column-gap: 2rem;
 `;
 
@@ -91,7 +86,7 @@ const UserExperience = ({ color }) => {
   }, []);
 
   return (
-    <ExperienceContainer color={color} className="container">
+    <ExperienceContainer color={color}>
       <Title color={color} label="As minhas experiências e formação">
         Minha experiência
       </Title>

@@ -21,12 +21,11 @@ const Item = styled.div`
   :not(:last-child):after {
     position: absolute;
     content: '';
-    top: .6rem;
+    top: 1.2rem;
     right: -2.4rem;
     width: 2px;
     height: 100%;
     background: ${props => props.theme.colors.text};
-
   }
   
   :nth-child(even) {
@@ -44,13 +43,21 @@ const Item = styled.div`
     p:first-of-type {
       
       :before {
-        left: -3.65rem;
+        left: -3.2rem;
+        width: 40px;
+        background: linear-gradient(-90deg, ${props => props.color} 15%, ${props => props.theme.colors.text} 100%);
       }
     }
   }
 
   p {
     padding: .3rem 0;
+
+    :first-child {
+      display: inline-block;
+      padding-right: 1rem;
+      background: ${props => props.theme.colors.primary};
+    }
   }
 
   svg {
@@ -70,14 +77,16 @@ const Title = styled.p`
   :before {
     position: absolute;
     content: '';
-    top: 10px;
-    right: -2.7rem;
+    top: 18px;
+    right: -2.3rem;
     z-index: 999;
     display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+    width: 120px;
+    height: 2px;
+    /* border-radius: 50%; */
     background: ${props => props.color};
+    background: linear-gradient(90deg, ${props => props.color} 30%, ${props => props.theme.colors.text} 100%);
+    z-index: -1;
   }
 `;
 
@@ -143,16 +152,13 @@ const UserItem = ({item, title, description, company, type, date, color, rgba, .
       <Description> {description} </Description>
       <Company> {typeData} {company} </Company>
       <Date> <Calendar /> {date} </Date>
+      
+      <div color={color}>
 
-       {/* <Arrow /> */}
-
-      {/* <Skills color={color}> */}
-
-      {/* {props.react ? <ReactIcon /> : ''}
-      {props.styledComponents ? <img src="https://user-images.githubusercontent.com/52588477/160459541-a51fdbdc-8ec2-4854-b8e6-1baaebd731bc.png" alt="styled components icon" /> : ''}
       {props.html ? <Html /> : ''}
-      {props.css ? <Css /> : ''} */}
-      {/* </Skills> */}
+      {props.css ? <Css /> : ''}
+      {props.react ? <ReactIcon /> : ''}
+      </div>
     </Item>
   )
 }
