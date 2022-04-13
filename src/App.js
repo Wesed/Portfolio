@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar';
 import Header from './Components/Header/Header';
 import User from './Components/User/User';
 import UserExperience from "./Components/User/UserExperience";
+import Projetos from './Components/User/Projetos/Projetos';
 
 function App() {
   const [theme, setTheme] = React.useState(Dark);
@@ -24,9 +25,10 @@ function App() {
           <GlobalStyle />
           <Header color={color}/>
           <ConfigMenu theme={theme}  setTheme={setTheme} color={color} setColor={setColor}/>
-          <Navbar color={color} theme={theme}/>
+          {/* <Navbar color={color} theme={theme}/> */}
           <User color={color}/> 
           <UserExperience color={color} />
+          <Projetos color={color}/>
       </ThemeProvider>
     </div>
   );

@@ -4,7 +4,7 @@ import  styled  from 'styled-components';
 const Titulo = styled.h1`
   font-weight: 700;
   color: ${props => props.theme.colors.text};
-  text-transform: capitalize;
+  text-transform: uppercase;
   position: relative;
   text-align: center;
   grid-column: 1 / -1;
@@ -26,11 +26,16 @@ const Titulo = styled.h1`
 
 const SubTitulo = styled.p`
   position: relative;
+  text-transform: initial;
   bottom: 55px;
   font-size: 0.8rem;
   font-weight: 300;
   opacity: 0.8;
   text-align: center;
+
+  :first-letter {
+    text-transform: capitalize;
+  }
 `
 
 const Title = ({color, label, children}) => {

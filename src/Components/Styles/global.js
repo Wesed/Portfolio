@@ -28,6 +28,12 @@ ul, li {
   margin: 0;
 }
 
+a:visited, 
+a:link,
+a:active {
+    text-decoration: none;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -78,6 +84,29 @@ img {
 .navSvg svg {
   width: 16px;
   height: 16px;
+}
+
+/* Swiper carousel */
+
+.swiper-slide {
+  padding: 1rem;
+  background-position: center;
+  background-size: cover;
+  width: 670px;
+  height: 550px;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet-active {
+  color: ${props => props.color};
 }
 
 @keyframes arrowUp {

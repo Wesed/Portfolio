@@ -1,11 +1,10 @@
 import React from "react";
 import UserItem from './UserItem';
 
-const UserWork = ({color}) => {
+const UserWork = () => {
   return (
     <>
       <UserItem
-        color={color}
         title="Animaly Petshop"
         description="Sistema web para gerenciamento de Pet Shops"
         company="Freelancer"
@@ -14,7 +13,6 @@ const UserWork = ({color}) => {
       />
 
       <UserItem
-        color={color}
         title="Dogs"
         description="Rede social fictícia para cães"
         company="Projeto pessoal"
@@ -23,7 +21,6 @@ const UserWork = ({color}) => {
       />
 
       <UserItem
-        color={color}
         title="Lalakids & Teen"
         description="Loja de roupas infanto-juvenil"
         company="Freelancer"
@@ -32,7 +29,6 @@ const UserWork = ({color}) => {
       />
 
       <UserItem
-        color={color}
         title="Suporte técnico"
         description="Software para gestão de hotelarias"
         company="InnManager"
@@ -41,7 +37,6 @@ const UserWork = ({color}) => {
       />
 
       <UserItem
-        color={color}
         title="Freelance Voluntário"
         description="Arrecadação de alimentos"
         company="Bixo Bom"
@@ -50,7 +45,6 @@ const UserWork = ({color}) => {
       />
 
       <UserItem
-        color={color}
         title="Freelance Voluntário"
         description="Arrecadação de alimentos"
         company="Projeto Guri"

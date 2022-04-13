@@ -5,7 +5,7 @@ import {ReactComponent as Clients} from '../../Assets/clients.svg';
 import {ReactComponent as Projects} from '../../Assets/project.svg';
 import UseHex from '..//Hooks/UseHex';
 import Title from '../Useful/Title';
-import { ReactComponent as Download } from "../../Assets/download.svg";
+import Button from './../Useful/Button';
 
 const UserContainer = styled.section`
   margin-top: 5rem;
@@ -127,41 +127,12 @@ const ProfileMenu = styled.div`
   }
 ` 
 
-
 const ProfileText = styled.p`
   flex-wrap: wrap;
   width: 84%;
   text-align: start;
   font-size: .9rem;
   font-weight: 300;
-`
-
-
-const ButtonCV = styled.button`
-  display: flex;
-  align-items: center;
-  border: none;
-  background: ${props => props.theme.colors.primary};
-  background-image: linear-gradient(-125deg, transparent, 
-    ${props => props.color});
-  padding: 1rem 2rem;
-  gap: 10px;
-  border-radius: 10px;
-  color: ${props => props.theme.colors.text};
-  font-weight: 700;
-  font-size: 1rem;
-  margin: auto;
-
-  :hover {
-    background: transparent;
-    box-shadow: 1px 1px 5px 1px ${props => props.color};
-    cursor: pointer;
-  }
-
-  svg {
-    width: 16px;
-    fill: ${props => props.theme.colors.text};
-  }
 `
 
 const User = ({color}) => { 
@@ -214,7 +185,9 @@ const User = ({color}) => {
           Hampden-Sydney College in Virginia
         </ProfileText>
 
-        <ButtonCV download="../../Assets/curriculo.pdf" color={color}>Download CV <Download /> </ButtonCV>
+        <Button color={color} 
+        href="https://github.com/Wesed/dogs/files/8459976/curriculo.pdf"
+        download="Curriculo - Weslley Eduardo"> Download CV</Button>
       </ProfileContainer>
     </UserContainer>
   );

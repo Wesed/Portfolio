@@ -12,7 +12,6 @@ const ExperienceContainer = styled.section`
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   margin-top: 5rem;
-  margin-bottom: 800px;
 `;
 
 const ButtonsDiv = styled.div`
@@ -93,7 +92,7 @@ const UserExperience = ({ color }) => {
 
   return (
     <ExperienceContainer color={color} className="container">
-      <Title color={color} label="Os meus últimos projetos">
+      <Title color={color} label="As minhas experiências e formação">
         Minha experiência
       </Title>
 
@@ -113,7 +112,7 @@ const UserExperience = ({ color }) => {
 
       <ExpItem>
 
-        {work && <UserWork style={{color: `${props => props.color}`}} color={color}/>}
+        {work && <UserWork color={color}/>}
         {formacao && <UserFormacao color={color}  />}
 
       </ExpItem>

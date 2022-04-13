@@ -1,11 +1,10 @@
 import React from "react";
 import UserItem from "./UserItem";
 
-const UserFormacao = ({ color }) => {
+const UserFormacao = () => {
   return (
     <>
       <UserItem
-        color={color}
         title="Engenharia de Software"
         description="Curso superior"
         company="Unifae"
@@ -14,7 +13,6 @@ const UserFormacao = ({ color }) => {
       />
 
       <UserItem
-        color={color}
         title="Scrum Fundamentals Certified"
         description="Certificação"
         company="ScrumStudy"
@@ -23,7 +21,6 @@ const UserFormacao = ({ color }) => {
       />
 
       <UserItem
-        color={color}
         title="CSS SASS"
         description="Certificado"
         company="Origamid"
@@ -32,7 +29,6 @@ const UserFormacao = ({ color }) => {
       />
 
       <UserItem
-        color={color}
         title="ReactJs Completo"
         description="Certificado"
         company="Origamid"
@@ -41,7 +37,6 @@ const UserFormacao = ({ color }) => {
       />
 
       <UserItem
-        color={color}
         title="Css Grid Layout"
         description="Certificado"
         company="Origamid"
@@ -50,7 +45,6 @@ const UserFormacao = ({ color }) => {
       />
 
       <UserItem
-        color={color}
         title="Css Flexbox"
         description="Certificado"
         company="Origamid"

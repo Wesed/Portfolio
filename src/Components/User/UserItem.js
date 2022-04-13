@@ -86,10 +86,12 @@ const Description = styled.p`
 `; 
 
 const Company = styled.p`
+    display: flex;
+    gap: .2rem;
     font-size: .8rem;
 
     svg {
-      margin-right: .1rem;
+      /* margin-right: .5rem; */
       width: 15px;
     }
 `

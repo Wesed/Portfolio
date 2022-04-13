@@ -9,6 +9,7 @@ import DarkTheme from "./Styles/Dark";
 
 const Configuration = styled.div`
   position: absolute;
+  z-index: 999;
   display: flex;
   top: 35%;
   transform: translateY(-35%); 
