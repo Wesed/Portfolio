@@ -74,6 +74,10 @@ const ProfileContainer = styled.div`
   justify-content: end;
   flex-wrap: wrap;
   gap: 15px;
+
+  a {
+    margin: 0 auto;
+  }
 `
 const ProfileMenu = styled.div`
   display: flex;
@@ -84,25 +88,23 @@ const ProfileMenu = styled.div`
   width: 150px;
   height: 150px;
   border-radius: 10px;
-  background-image: linear-gradient(-125deg, transparent, 
-    ${props => props.color});
+  background-image: linear-gradient(-125deg, ${props => props.hex}, 
+    ${props => props.hex2});
   text-align: center;
 
   span svg{
     width: 24px;
     height: 24px;
     fill: white;
-    fill: ${props => props.theme.colors.text};
   }
 
   p {
+    color: white;
     margin-top: .5rem;
   }
 
   p:first-of-type {
     font-weight: 700;
-    color: white;
-    color: ${props => props.theme.colors.text};
   }
 
   p:nth-child(3) {
@@ -115,14 +117,14 @@ const ProfileMenu = styled.div`
     cursor: pointer;
     transition: .1s;
     /* border: 1px solid white; */
-    box-shadow: 1px 1px 5px 1px ${props => props.color};
+    box-shadow: 1px 1px 5px 1px ${props => props.hex2};
 
     p {
       color: ${props => props.theme.colors.text};
     }
 
     svg {
-      fill: ${props => props.theme.colors.text};;
+      fill: ${props => props.theme.colors.text};
     }
   }
 ` 
@@ -136,7 +138,8 @@ const ProfileText = styled.p`
 `
 
 const User = ({color}) => { 
-  const rgba = UseHex(color, 1);
+  const hex = UseHex(color, .6);
+  const hex2 = UseHex(color, 1);
   
   return (
     <UserContainer className="container">
@@ -144,7 +147,7 @@ const User = ({color}) => {
         Sobre mim
       </Title>
 
-      <ProfileImg color={rgba}>
+      <ProfileImg color={hex2}>
         <div>
           <img
             src="https://user-images.githubusercontent.com/52588477/158433544-e869ce81-06fb-4792-9895-819b388d4377.jpg"
@@ -154,7 +157,7 @@ const User = ({color}) => {
       </ProfileImg>
 
       <ProfileContainer>
-        <ProfileMenu color={color}>
+        <ProfileMenu hex={hex} hex2={hex2}>
           <span>
             <Experience />
           </span>
@@ -162,7 +165,7 @@ const User = ({color}) => {
           <p> 3 anos </p>
         </ProfileMenu>
 
-        <ProfileMenu color={color}>
+        <ProfileMenu hex={hex} hex2={hex2}>
           <span>
             <Projects />
           </span>
@@ -170,7 +173,7 @@ const User = ({color}) => {
           <p> Finalizados e em andamento</p>
         </ProfileMenu>
 
-        <ProfileMenu color={color}>
+        <ProfileMenu hex={hex} hex2={hex2}>
           <span>
             <Clients />
           </span>

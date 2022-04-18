@@ -10,6 +10,7 @@ import User from './Components/User/User';
 import UserExperience from "./Components/User/UserExperience";
 import Projetos from './Components/User/Projetos/Projetos';
 import Clientes from './Components/User/Clientes/Clientes';
+import Contato from './Components/User/Contato/Contato';
 
 function App() {
   const [theme, setTheme] = React.useState(Dark);
@@ -31,6 +32,7 @@ function App() {
           <UserExperience color={color} />
           <Projetos color={color}/>
           <Clientes color={color}/>
+          <Contato color={color}/>
       </ThemeProvider>
     </div>
   );

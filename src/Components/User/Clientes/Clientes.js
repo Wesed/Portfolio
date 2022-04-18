@@ -12,10 +12,6 @@ SwiperCore.use([EffectCreative, Pagination]);
 
 
 const ClientesContainer = styled.section`
-  margin-top: 10rem;
-  grid-column: 1 / -1;
-  /* border: 1px solid red; */
-  /* padding: 0 4rem; */
 `;
 
 const Slider = styled.div`
@@ -78,7 +74,6 @@ const Clientes = ({color}) => {
         pagination={{ clickable: true }}
         spaceBetween={-60}
         autoHeight={true}
-        lazyLoading={true}
         >
 
         <SwiperSlide>

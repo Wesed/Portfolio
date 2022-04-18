@@ -41,7 +41,7 @@ img {
 
 .container {
   width: 60rem;
-  margin: 0 auto;
+  margin: 10rem auto;
 }
 
 /* HEADER */
