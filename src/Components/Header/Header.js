@@ -5,12 +5,18 @@ import UseHex from './../Hooks/UseHex';
 
 const HeaderContainer = styled.section`
   position: relative;
+  display: grid;
   margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 10rem);
-  margin-bottom: 10rem;
+
+  @media (max-width: 40rem) {
+    margin-top: initial;
+    width: 40rem;
+    height: 100vh;
+  }
 `
 
 const TextContainer = styled.div`
@@ -37,13 +43,17 @@ const HeaderSubtitle = styled.p`
   margin-top: 1rem;
   z-index: 999;
   background: ${props => props.theme.colors.primary};
+
+  @media(max-width: 40rem) {
+    font-size: 1.2rem;
+  }
 `
 
 const Header = ({color}) => {
   const rgba = UseHex(color, 1);
 
   return <>
-    <header className='container'>
+    <header id="home" className='container'>
         <HeaderContainer>
           <SkillsShortcuts color={color}/>
           <TextContainer>

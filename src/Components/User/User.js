@@ -142,7 +142,7 @@ const User = ({color}) => {
   const hex2 = UseHex(color, 1);
   
   return (
-    <UserContainer className="container">
+    <UserContainer id="user" className="container">
       <Title color={color} label="Conheça mais">
         Sobre mim
       </Title>

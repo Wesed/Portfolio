@@ -8,13 +8,19 @@ const Skills = styled.ul`
   position: absolute;
   left: -10px;
   top: 65%;
-  transform: translateY(-65%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100px;
   width: 150px;
-  transform: translateY(-50%);
+  width: auto;
+
+  @media(max-width: 40rem) {
+    left: 6.5rem;
+    top: 40rem;
+    flex-direction: row;
+    gap: 2rem;
+  }
 `;
 
 const DivItem = styled.div`
@@ -29,8 +35,6 @@ const DivItem = styled.div`
     left: 30px;
     display: block;
     background:  ${props => props.color};
-
-
   }
 
   :hover {
@@ -42,7 +46,6 @@ const DivItem = styled.div`
 
 const ListItem = styled.li`
   width: 18px;
-  height: 18px;
   fill: ${props => props.theme.colors.text};
 
   :after {
@@ -62,8 +65,10 @@ const ListItem = styled.li`
   :hover {
     cursor: pointer;
     fill: ${props => props.theme.colors.text};
-;
-    /* transform: scale(1.2); */
+  }
+
+  @media(max-width: 40rem) {
+    width: 24px;
   }
 `
 

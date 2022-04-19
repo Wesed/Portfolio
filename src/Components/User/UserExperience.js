@@ -86,7 +86,7 @@ const UserExperience = ({ color }) => {
   }, []);
 
   return (
-    <ExperienceContainer color={color}>
+    <ExperienceContainer id="exp" color={color}>
       <Title color={color} label="As minhas experiências e formação">
         Experiência
       </Title>

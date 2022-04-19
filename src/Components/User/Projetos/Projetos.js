@@ -69,7 +69,7 @@ const Slider = styled.div`
 const Projetos = ({color}) => {
   
   return (
-    <ProjetoContainer>
+    <ProjetoContainer id="portfolio">
       <Title color={color} label="Os meus principais trabalhos">
         Projetos
       </Title>

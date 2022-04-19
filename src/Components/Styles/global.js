@@ -41,7 +41,7 @@ img {
 
 .container {
   width: 60rem;
-  margin: 10rem auto;
+  margin: 0 auto 10rem auto;
 }
 
 /* HEADER */
@@ -79,11 +79,6 @@ img {
     opacity: 1;
     transform: initial;
   }
-}
-
-.navSvg svg {
-  width: 16px;
-  height: 16px;
 }
 
 /* Swiper carousel */
