@@ -16,8 +16,9 @@ const Skills = styled.ul`
   width: auto;
 
   @media(max-width: 40rem) {
-    left: 6.5rem;
-    top: 40rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 35rem;
     flex-direction: row;
     gap: 2rem;
   }

@@ -25,8 +25,8 @@ const Configuration = styled.div`
   transition: .1s;
 
   @media (max-width: 40rem) {
-    left: 6rem;
-    top: 15rem;  }
+    left: 2rem;
+    top: 5rem;  }
 `;
 
 const IconConfig = styled.div`

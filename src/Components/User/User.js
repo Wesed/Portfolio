@@ -8,19 +8,22 @@ import Title from '../Useful/Title';
 import Button from './../Useful/Button';
 
 const UserContainer = styled.section`
+  border: 1px solid lime;
   margin-top: 5rem;
   display: grid;
   grid-template-columns: 35% 60%;
   column-gap: 50px;
+
+  @media(max-width: 30rem) {
+    grid-template-columns: 1fr;
+  }
   `
 
 const ProfileImg = styled.div`
-  width: 100%;
   aspect-ratio: 1/1;
   position: relative;
-  grid-row: 2;
-  display: grid;
-  place-items: center;
+  /* display: grid; */
+  /* place-items: center; */
   border-radius: 2rem;
   background-image: linear-gradient(-45deg, transparent, 
     ${props => props.color});
@@ -66,25 +69,27 @@ const ProfileImg = styled.div`
     bottom: 65px;
     transition: .1s;
   } */
+
+  @media(max-width: 30rem) {
+    width: 80%;
+    justify-self: center;
+    margin-bottom: 3rem;
+  }
 `
 
 const ProfileContainer = styled.div`
-  grid-row: 2;
   display: flex;
-  justify-content: end;
-  flex-wrap: wrap;
+  justify-content: center;
+  /* flex-wrap: wrap; */
   gap: 15px;
-
-  a {
-    margin: 0 auto;
-  }
 `
 const ProfileMenu = styled.div`
+  border:2px solid blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   width: 150px;
   height: 150px;
   border-radius: 10px;
@@ -112,7 +117,8 @@ const ProfileMenu = styled.div`
     opacity: .8;
   }
 
-  :hover {
+  :hover,
+  :focus {
     background: transparent;
     cursor: pointer;
     transition: .1s;
@@ -157,6 +163,7 @@ const User = ({color}) => {
       </ProfileImg>
 
       <ProfileContainer>
+        <a href="https://google.com">
         <ProfileMenu hex={hex} hex2={hex2}>
           <span>
             <Experience />
@@ -164,6 +171,7 @@ const User = ({color}) => {
           <p> Experiência </p>
           <p> 3 anos </p>
         </ProfileMenu>
+        </a>
 
         <ProfileMenu hex={hex} hex2={hex2}>
           <span>

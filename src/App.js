@@ -28,13 +28,13 @@ function App() {
           <GlobalStyle />
           <Header color={color}/>
           <ConfigMenu theme={theme}  setTheme={setTheme} color={color} setColor={setColor}/>
-          <Navbar color={color} theme={theme}/>
           <User color={color}/> 
-          <UserExperience color={color} />
+          {/* <UserExperience color={color} />
           <Projetos color={color}/>
           <Clientes color={color}/>
           <Contato color={color}/>
-          <Footer />
+          <Footer /> */}
+          {/* <Navbar color={color} theme={theme}/> */}
       </ThemeProvider>
     </div>
   );

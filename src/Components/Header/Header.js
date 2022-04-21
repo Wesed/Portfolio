@@ -5,16 +5,16 @@ import UseHex from './../Hooks/UseHex';
 
 const HeaderContainer = styled.section`
   position: relative;
-  display: grid;
   margin-top: 5rem;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 10rem);
 
-  @media (max-width: 40rem) {
-    margin-top: initial;
-    width: 40rem;
+
+  @media (max-width: 30rem) {
+    margin: initial;
+    justify-content: center;
     height: 100vh;
   }
 `
@@ -35,18 +35,16 @@ const HeaderTitle = styled.h2`
   -webkit-background-clip: text;
   color: black;
   transition: .1s;
+
+  @media (max-width: 30rem) {
+    font-size: 3.5rem;
+  }
 `
 
 const HeaderSubtitle = styled.p`
   position: relative;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 1rem;
-  z-index: 999;
-  background: ${props => props.theme.colors.primary};
-
-  @media(max-width: 40rem) {
-    font-size: 1.2rem;
-  }
 `
 
 const Header = ({color}) => {

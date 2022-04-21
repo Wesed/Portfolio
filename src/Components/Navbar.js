@@ -10,8 +10,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Nav = styled.nav`
   position: fixed;
-  bottom: 20px;
-  width: 15.6rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50px;
@@ -20,7 +19,7 @@ const Nav = styled.nav`
   fill: white;
   padding: .675rem;
   backdrop-filter: blur(10px);
-  z-index: 998;
+  /* z-index: 998; */
 `;
 
 const NavMenu = styled.ul`
@@ -66,7 +65,7 @@ const Navbar = ({color, theme}) => {
     <Nav theme={theme} themeMode={themeMode}>
         <NavMenu color={color}>
           <li>
-            <AnchorLink href="#home">
+            <AnchorLink href="#home" offset="100">
               <Home/>
             </AnchorLink>
           </li>

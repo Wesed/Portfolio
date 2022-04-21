@@ -42,6 +42,10 @@ img {
 .container {
   width: 60rem;
   margin: 0 auto 10rem auto;
+
+  @media(max-width: 30rem) {
+    width: auto;
+  }
 }
 
 /* HEADER */
