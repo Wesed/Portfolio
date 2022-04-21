@@ -6,6 +6,8 @@ import {ReactComponent as Projects} from '../../Assets/project.svg';
 import UseHex from '..//Hooks/UseHex';
 import Title from '../Useful/Title';
 import Button from './../Useful/Button';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 
 const UserContainer = styled.section`
   border: 1px solid lime;
@@ -80,11 +82,10 @@ const ProfileImg = styled.div`
 const ProfileContainer = styled.div`
   display: flex;
   justify-content: center;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   gap: 15px;
 `
 const ProfileMenu = styled.div`
-  border:2px solid blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,6 +97,16 @@ const ProfileMenu = styled.div`
   background-image: linear-gradient(-125deg, ${props => props.hex}, 
     ${props => props.hex2});
   text-align: center;
+
+  :hover,
+  :focus {
+    background: transparent;
+    cursor: pointer;
+    transition: .1s;
+    border: 5px solid green;
+    box-shadow: 1px 1px 5px 1px ${props => props.hex2
+    };
+  }
 
   span svg{
     width: 24px;
@@ -117,14 +128,6 @@ const ProfileMenu = styled.div`
     opacity: .8;
   }
 
-  :hover,
-  :focus {
-    background: transparent;
-    cursor: pointer;
-    transition: .1s;
-    /* border: 1px solid white; */
-    box-shadow: 1px 1px 5px 1px ${props => props.hex2};
-
     p {
       color: ${props => props.theme.colors.text};
     }
@@ -132,7 +135,6 @@ const ProfileMenu = styled.div`
     svg {
       fill: ${props => props.theme.colors.text};
     }
-  }
 ` 
 
 const ProfileText = styled.p`
@@ -163,7 +165,7 @@ const User = ({color}) => {
       </ProfileImg>
 
       <ProfileContainer>
-        <a href="https://google.com">
+        <AnchorLink href="#exp" offset="100">
         <ProfileMenu hex={hex} hex2={hex2}>
           <span>
             <Experience />
@@ -171,23 +173,27 @@ const User = ({color}) => {
           <p> Experiência </p>
           <p> 3 anos </p>
         </ProfileMenu>
-        </a>
+        </AnchorLink>
 
-        <ProfileMenu hex={hex} hex2={hex2}>
-          <span>
-            <Projects />
-          </span>
-          <p> Projetos </p>
-          <p> Finalizados e em andamento</p>
-        </ProfileMenu>
+        <AnchorLink href="#portfolio" offset="100">
+          <ProfileMenu hex={hex} hex2={hex2}>
+            <span>
+              <Projects />
+            </span>
+            <p> Projetos </p>
+            <p> Finalizados e em andamento</p>
+          </ProfileMenu>
+        </AnchorLink>
 
-        <ProfileMenu hex={hex} hex2={hex2}>
-          <span>
-            <Clients />
-          </span>
-          <p> Clientes </p>
-          <p> 2 Avaliações</p>
-        </ProfileMenu>
+        <AnchorLink href="#clients" offset="100">
+          <ProfileMenu hex={hex} hex2={hex2}>
+            <span>
+              <Clients />
+            </span>
+            <p> Clientes </p>
+            <p> 2 Avaliações</p>
+          </ProfileMenu>
+        </AnchorLink>
 
         <ProfileText>
           Contrary to popular belief, Lorem Ipsum is not simply random text. It

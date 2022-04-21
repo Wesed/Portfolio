@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 SwiperCore.use([EffectCreative, Navigation]);
 
 const ProjetoContainer = styled.section`
-  margin-top: 10rem;
+  margin-bottom: 10rem;
 `;
 
 const Slider = styled.div`

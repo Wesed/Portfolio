@@ -61,7 +61,7 @@ const Slider = styled.div`
 
 const Clientes = ({color}) => {
   return (
-    <ClientesContainer id="users" className="container">
+    <ClientesContainer id="clients" className="container">
       <Title color={color} label="Feedback">
         Clientes
       </Title>

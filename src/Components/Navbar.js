@@ -85,7 +85,7 @@ const Navbar = ({color, theme}) => {
             </AnchorLink>
           </li>
           <li>
-            <AnchorLink href="#users" offset="100">
+            <AnchorLink href="#clients" offset="100">
               <Users/>
             </AnchorLink>
           </li>
