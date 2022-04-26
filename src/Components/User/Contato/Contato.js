@@ -4,8 +4,9 @@ import Title from './../../Useful/Title';
 import {ReactComponent as Email} from '../../../Assets/email.svg';
 import {ReactComponent as Messenger} from '../../../Assets/messenger2.svg';
 import {ReactComponent as Whatsapp} from '../../../Assets/whatsapp.svg';
-import Input from './../../Useful/Input';
 import Button from './../../Useful/Button';
+import UseMedia from './../../Hooks/UseMedia';
+import emailjs from 'emailjs-com';
 
 const ContatoContainer = styled.section`
   display: grid;
@@ -13,14 +14,24 @@ const ContatoContainer = styled.section`
   column-gap: 5rem;
   justify-content: center;
   padding: 0 5rem;
-  /* border: 1px solid green; */
+
+  @media (max-width: 30rem) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 `;
 
 const ContactField = styled.div`
   /* border: 2px solid blue; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
+
+  @media (max-width: 30rem) {
+    flex-direction: row;
+  }
 
   div {
     display: flex;
@@ -28,13 +39,14 @@ const ContactField = styled.div`
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
+    width: 12rem;
     gap: .5rem;
     border-radius: 10px;
     background: ${props => props.theme.colors.secondary};
     box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 30%); 
 
     :hover {
-      cursor: pointer;
+      /* cursor: pointer; */
       background: transparent;
       box-shadow: 1px 1px 5px 1px ${props => props.color}; 
     }
@@ -54,10 +66,19 @@ const ContactField = styled.div`
       opacity: .8;
     }
     
-    p:nth-child(4) {
+    a {
       color: ${props => props.color};
       font-size: .8rem;
       font-weight: 900;
+    }
+
+    @media (max-width: 30rem) {
+      padding: 1rem;
+      width: auto;
+
+      svg {
+        fill: ${props => props.color};
+      }
     }
   }
 `;
@@ -71,40 +92,88 @@ const FormField = styled.form`
   a {
     align-self: start;
   }
+
+  input, textarea {
+    background: transparent;
+    border-style: none;
+    border-radius: 4px;
+    border: 1px solid ${props => props.color};
+    transition: .1s;
+
+    color: ${props => props.theme.colors.text};
+    font-size: 1rem;
+    padding: 1rem;
+    width: 100%;
+    background: transparent;
+    resize: none;
+    outline: none;
+
+    :hover,
+    :focus {
+      border: 1px solid ${props => props.theme.colors.text};
+    }
+  }
 `;
 
 const Contato = ({color}) => {
-  console.log(color);
+  const form = React.useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+  
+      emailjs.sendForm('gmail', 'template_az79ssb', form.current, 'aZspqX-pSkW7_ToJu')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+    e.target.reset();
+  };
+  
+  const media = UseMedia('(max-width: 30rem)');
   return (
     <ContatoContainer id="contato" className='container'>
       <Title color={color} label="Olá">Contato</Title>
       <ContactField color={color}>
         <div>
           <Email />
+          {media ? <></>
+          : 
+          <>
           <p>Email</p>
-          <p>support@gmail.com</p>
-          <p>Send a message</p>
+          <p>dev.wfeduardo@gmail.com</p>
+          <a href="mailto:dev.wfeduardo@gmail.com">Enviar Mensagem</a>
+          </>}
         </div>
 
         <div>
           <Messenger />
+          {media ? <></>
+          : 
+          <>
           <p>Messenger</p>
-          <p>@user</p>
-          <p>Send a message</p>
+          <p>@weslleyfillipee</p>
+          <a target="_blank" rel="noreferrer" href="https://m.me/weslleyfillipee">Enviar mensagem</a>
+          </>}
         </div>
 
         <div>
           <Whatsapp />
+          {media ? <></>
+          : 
+          <>
           <p>WhatsApp</p>
           <p>+55 19 993844103</p>
-          <p>Send a message</p>
+          <a target="_blank" rel="noreferrer" href="https://api.whatsapp.com/send?1=pt_BR&phone=5519993844103&text=Ola! Me interessei pelo seu portfolio!">Enviar mensagem</a>
+          </>}
         </div>
       </ContactField>
 
-      <FormField>
-        <Input color={color} type="text" placeholder="Nome completo / Empresa"/>
-        <Input color={color} type="email" placeholder="E-mail"/>
-        <Input color={color} type="textarea" rows={5}/>
+      <FormField ref={form} onSubmit={sendEmail} color={color}>
+        <input type="text" name="name" required color={color} placeholder="Nome completo / Empresa"/>
+        <input type="email" name="email" required color={color} placeholder="E-mail"/>
+        <input type="text" name="subject" color={color} placeholder="Assunto"/>
+        <textarea name="message" rows="5"></textarea>
         <Button color={color}>Enviar mensagem</Button>
       </FormField>
     </ContatoContainer>

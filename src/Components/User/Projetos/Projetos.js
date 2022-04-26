@@ -7,6 +7,7 @@ import { EffectCreative } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import UseMedia from './../../Hooks/UseMedia';
 
 SwiperCore.use([EffectCreative, Navigation]);
 
@@ -46,15 +47,13 @@ const Slider = styled.div`
     display: inline-block;
     transition: .2s;
 
-    /* :before {
-      position: absolute;
-      content: '';
-      bottom: 0;
-      left: -.2rem;
-      height: .1rem;
-      width: 3.5rem;
+    @media (max-width: 30rem) {
+      font-weight: 700;
+      padding: .5rem 1rem;
       background: ${props => props.color};
-    } */
+      color: white;
+      border-radius: 10px;    
+    }
 
     :hover {
       font-weight: 700;
@@ -67,6 +66,13 @@ const Slider = styled.div`
 `;
 
 const Projetos = ({color}) => {
+  const media = UseMedia('(max-width: 30rem)');
+  let slidesPerView = 'auto';
+  let loop = true;
+  if(media === true) {
+    slidesPerView = 1;
+    loop = false;
+  }
   
   return (
     <ProjetoContainer id="portfolio">
@@ -75,9 +81,9 @@ const Projetos = ({color}) => {
       </Title>
 
       <Swiper
-        slidesPerView="auto"
+        slidesPerView={slidesPerView}
         centeredSlides={true}
-        loop={true}
+        loop={loop}
         navigation={true}
       >
         <SwiperSlide>

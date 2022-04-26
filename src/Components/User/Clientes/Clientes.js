@@ -7,6 +7,7 @@ import SwiperCore, {Pagination} from 'swiper/core';
 import { EffectCreative } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import UseMedia from './../../Hooks/UseMedia';
 
 SwiperCore.use([EffectCreative, Pagination]);
 
@@ -60,6 +61,9 @@ const Slider = styled.div`
 
 
 const Clientes = ({color}) => {
+  const media = UseMedia('(max-width: 30rem)');
+  let slidesPerView = 2;
+  if(media === true) slidesPerView = 1;
   return (
     <ClientesContainer id="clients" className="container">
       <Title color={color} label="Feedback">
@@ -68,7 +72,7 @@ const Clientes = ({color}) => {
 
       <Swiper 
         initialSlide={0}
-        slidesPerView={2}
+        slidesPerView={slidesPerView}
         centeredSlides={false}
         // loop={true}
         pagination={{ clickable: true }}

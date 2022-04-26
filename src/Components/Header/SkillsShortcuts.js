@@ -12,7 +12,7 @@ const Skills = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   height: 100px;
-  width: 150px;
+  width: 200px;
   width: auto;
 
   @media(max-width: 40rem) {
@@ -36,6 +36,12 @@ const DivItem = styled.div`
     left: 30px;
     display: block;
     background:  ${props => props.color};
+
+    @media (max-width: 30rem) {
+      display: block;
+      top: 4rem;
+      left: -1px;
+    }
   }
 
   :hover {
@@ -48,15 +54,22 @@ const DivItem = styled.div`
 const ListItem = styled.li`
   width: 18px;
   fill: ${props => props.theme.colors.text};
+  
 
   :after {
+    position: absolute;
     content: attr(data-name);
     color: ${props => props.theme.colors.text};
-    position: absolute;
     /* left: 30px; */
     padding: 0 0 0 10px;
     opacity: 0;
-    width: 80%;
+    width: 150px;
+
+    @media (max-width: 30rem) {
+      display: block;
+      top: 2.5rem;
+      padding: 0;
+    }
   }
 
   :hover:after {
@@ -68,6 +81,12 @@ const ListItem = styled.li`
     fill: ${props => props.theme.colors.text};
   }
 
+  a {
+    svg {
+      fill: ${props => props.theme.colors.text};
+    }
+  }
+
   @media(max-width: 40rem) {
     width: 24px;
   }
@@ -77,24 +96,32 @@ const SkillsShortcuts = ({color}) => {
   const skills = [
     {
       name: 'Linkedin',
-      content: <Linkedin />
+      content: <Linkedin />,
+      href: 'https://www.linkedin.com/in/weslleyeduardo/'
     }, 
 
     {
       name: 'Github',
-      content: <Github />
+      content: <Github />,
+      href: 'https://github.com/Wesed'
     }, 
 
     {
       name: 'Download CV',
-      content: <Download />
+      content: <Download />,
+      href: 'https://github.com/Wesed/dogs/files/8459976/curriculo.pdf'
     }, 
   ]
+
   return (
     <>
       <Skills>
             {skills.map((item, index) => 
-            <DivItem key={index} color={color}><ListItem data-name={item.name}> {item.content} </ListItem> </DivItem>)}
+            <DivItem key={index} color={color}>
+              <ListItem href={item.href} data-name={item.name}> 
+              <a href={item.href}>{item.content}</a>
+            </ListItem> 
+            </DivItem>)}
       </Skills>
     </>
   );

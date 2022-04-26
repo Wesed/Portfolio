@@ -10,13 +10,20 @@ const ExperienceContainer = styled.section`
   margin-top: 10rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 30rem) {
+    grid-template-columns: 100%;
+  }
 `;
 
 const ButtonsDiv = styled.div`
-  display: flex;
   grid-column: 1 / -1;
+  display: flex;
   margin: 0 auto;
   margin-bottom: 2rem;
+
+  @media (max-width: 30rem) {
+  }
 `;
 
 const ExpItem = styled.div`
@@ -26,6 +33,12 @@ const ExpItem = styled.div`
   grid-column: 1 / -1;
   margin: 0 auto;
   column-gap: 2rem;
+
+  @media (max-width: 30rem) {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
 `;
 
 const Btn = styled.button`
@@ -86,7 +99,7 @@ const UserExperience = ({ color }) => {
   }, []);
 
   return (
-    <ExperienceContainer id="exp" color={color}>
+    <ExperienceContainer id="exp" color={color} className='container'>
       <Title color={color} label="As minhas experiências e formação">
         Experiência
       </Title>

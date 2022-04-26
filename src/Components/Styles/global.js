@@ -60,7 +60,6 @@ img {
   height: 32px;
   background: ${props => props.theme.colors.secondary};
   fill: ${props => props.theme.colors.text};
-  border: 1px solid ${props => props.theme.colors.border};
   border-radius: 50%;
   padding: 7px;
 }

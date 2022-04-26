@@ -10,7 +10,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 
 const UserContainer = styled.section`
-  border: 1px solid lime;
   margin-top: 5rem;
   display: grid;
   grid-template-columns: 35% 60%;
@@ -103,7 +102,6 @@ const ProfileMenu = styled.div`
     background: transparent;
     cursor: pointer;
     transition: .1s;
-    border: 5px solid green;
     box-shadow: 1px 1px 5px 1px ${props => props.hex2
     };
   }

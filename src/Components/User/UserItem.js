@@ -18,55 +18,85 @@ const Item = styled.div`
   grid-column: 1 / -1;
   margin-left: 3.4rem;
 
+  @media (max-width: 30rem) {
+    grid-column: auto;
+    margin: auto auto 3rem auto;
+    /* padding: 0 0 0 1rem; */
+
+    ::before {
+      position: absolute;
+      left: -1.7rem;
+      top: 1rem;
+      z-index: -1;
+      content: '';
+      display: inline-block;
+      width: 2px;
+      height: 13rem;
+      background: linear-gradient(45deg, ${props => props.color} 30%, ${props => props.theme.colors.text} 100%);
+    }
+
+    :last-child {
+      ::before {
+        height: 7rem;
+      }
+    }
+  }
+
   :not(:last-child):after {
-    /* border: 1px solid red; */
     position: absolute;
-    content: '';
+    content: "";
     top: 1.12rem;
     right: -2.4rem;
     width: 2px;
     height: 100%;
-    background: ${props => props.theme.colors.text};
+    background: ${(props) => props.theme.colors.text};
+
+    @media (max-width: 30rem) {
+      display: none;
+    }
   }
-  
-  :nth-child(even) {
+
+  @media (min-width: 31rem) {
+    :nth-child(even) {
     grid-column: 2;
     margin-left: 3rem;
     /* os itens da direita pode crescer inifto a direita */
     width: 100%;
-    
-    :after
-     {
+
+    :after {
       right: initial;
       left: -3.33rem;
     }
 
     p:first-of-type {
-      
       :before {
         left: -3.33rem;
         width: 40px;
-        background: linear-gradient(-90deg, ${props => props.color} 15%, ${props => props.theme.colors.text} 100%);
+        background: linear-gradient(
+          -90deg,
+          ${(props) => props.color} 15%,
+          ${(props) => props.theme.colors.text} 100%
+        );
       }
     }
   }
+  }
 
   p {
-    padding: .3rem 0;
+    padding: 0.3rem 0;
 
     :first-child {
       display: inline-block;
       padding-right: 1rem;
-      background: ${props => props.theme.colors.primary};
+      background: ${(props) => props.theme.colors.primary};
     }
   }
 
   svg {
     width: 10px;
-    fill: ${props => props.theme.colors.text};
-    margin-right: .2rem;
+    fill: ${(props) => props.theme.colors.text};
+    margin-right: 0.2rem;
   }
-
 `;
 
 // const Skills = styled.div`
@@ -84,10 +114,18 @@ const Title = styled.p`
     display: block;
     width: 120px;
     height: 2px;
-    /* border-radius: 50%; */
     background: ${props => props.color};
     background: linear-gradient(90deg, ${props => props.color} 30%, ${props => props.theme.colors.text} 100%);
     z-index: -1;
+
+    @media (max-width: 30rem) {
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      left: -2.07rem;
+      top: 10px;
+      background: ${props => props.color};
+    }
   }
 `;
 

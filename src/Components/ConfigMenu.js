@@ -3,7 +3,6 @@ import styled, {css} from "styled-components";
 import { ReactComponent as Dark } from "../Assets/moon.svg";
 import { ReactComponent as Light } from "../Assets/sun.svg";
 import { ReactComponent as Config } from "../Assets/gear.svg";
-import { GlobalStyle } from "./Styles/Global";
 import LightTheme from "./Styles/Light";
 import DarkTheme from "./Styles/Dark";
 
@@ -15,6 +14,8 @@ const Configuration = styled.div`
   transform: translateY(-35%); 
   left: 175px;
   ${props => props.configPosition && css`
+    width: min-content;
+    height: min-content;
     position: fixed;
     top: auto;
     bottom: 0;
@@ -105,10 +106,8 @@ const ConfigMenu = ({theme, setTheme, color, setColor }) => {
 
 
   return (
-    <Configuration configPosition={configPosition} id="config">
-      {/* ver se dps de tudo ainda é necessario */}
-      <GlobalStyle color={color} />
 
+    <Configuration configPosition={configPosition} id="config">
 
       {/* classe foi necessario pq os icones precisam de um estilo igual pra todos eles, e nao so pra um unico */}
       <IconConfig className="btnConfig">

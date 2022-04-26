@@ -19,7 +19,7 @@ const Nav = styled.nav`
   fill: white;
   padding: .675rem;
   backdrop-filter: blur(10px);
-  /* z-index: 998; */
+  z-index: 999;
 `;
 
 const NavMenu = styled.ul`

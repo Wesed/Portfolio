@@ -11,9 +11,6 @@ const UserWork = ({color}) => {
         type="Freelance"
         date="Março 2022 - Atualmente"
         color={color}
-        react={true}
-        html={true}
-        css={true}
       />
 
       <UserItem
@@ -44,23 +41,22 @@ const UserWork = ({color}) => {
       />
 
       <UserItem
-        title="Freelance Voluntário"
+        title="Trabalho Voluntário"
         description="Arrecadação de alimentos"
-        company="Bixo Bom"
+        company="Unifae - Bixo Bom"
         type="Voluntario"
         date="2016 - 2019"
         color={color}
       />
 
       <UserItem
-        title="Freelance Voluntário"
+        title="Trabalho Voluntário"
         description="Arrecadação de alimentos"
         company="Projeto Guri"
         type="Voluntario"
-        date="Janeiro / Dezembro - 2015"
+        date="Fevereiro / Dezembro - 2015"
         color={color}
       />
-
     </>
   );
 };
