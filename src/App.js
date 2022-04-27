@@ -1,6 +1,5 @@
 import React from "react";
 import { GlobalStyle } from "./Components/Styles/Global";
-import Light from "./Components/Styles/Light";
 import Dark from "./Components/Styles/Dark";
 import { ThemeProvider } from "styled-components";
 import ConfigMenu from './Components/ConfigMenu';
