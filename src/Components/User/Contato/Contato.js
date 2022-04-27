@@ -123,9 +123,9 @@ const Contato = ({color}) => {
   
       emailjs.sendForm('gmail', 'template_az79ssb', form.current, 'aZspqX-pSkW7_ToJu')
         .then((result) => {
-            console.log(result.text);
+            alert('Email enviado com sucesso! Entrarei em contato logo ;)');
         }, (error) => {
-            console.log(error.text);
+          alert('Ops! Algo deu errado :(', error.text);
         });
     e.target.reset();
   };
@@ -170,10 +170,10 @@ const Contato = ({color}) => {
       </ContactField>
 
       <FormField ref={form} onSubmit={sendEmail} color={color}>
-        <input type="text" name="name" required color={color} placeholder="Nome completo / Empresa"/>
-        <input type="email" name="email" required color={color} placeholder="E-mail"/>
+        <input type="text" name="name" color={color} placeholder="Nome completo / Empresa" required/>
+        <input type="email" name="email" color={color} placeholder="E-mail" required/>
         <input type="text" name="subject" color={color} placeholder="Assunto"/>
-        <textarea name="message" rows="5"></textarea>
+        <textarea name="message" rows="5" required></textarea>
         <Button color={color}>Enviar mensagem</Button>
       </FormField>
     </ContatoContainer>

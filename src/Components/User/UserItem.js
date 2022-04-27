@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ReactComponent as Arrow} from '../../Assets/arrow.svg';
 import {ReactComponent as ReactIcon} from '../../Assets/react.svg';
 import {ReactComponent as Html} from '../../Assets/html5.svg';
 import {ReactComponent as Css} from '../../Assets/css3.svg';
@@ -31,7 +30,7 @@ const Item = styled.div`
       content: '';
       display: inline-block;
       width: 2px;
-      height: 13rem;
+      height: 14rem;
       background: linear-gradient(45deg, ${props => props.color} 30%, ${props => props.theme.colors.text} 100%);
     }
 

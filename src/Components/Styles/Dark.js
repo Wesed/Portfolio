@@ -1,4 +1,4 @@
-export default {
+const dark =  {
   title: 'dark',
   colors: {
     primary: '#333',
@@ -7,4 +7,6 @@ export default {
     textOpacity: '#eee',
     border: '#4F4F4F'
   }
-}
+};
+
+export default dark;

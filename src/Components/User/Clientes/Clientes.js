@@ -25,7 +25,7 @@ const Slider = styled.div`
   border-radius: 10px;
   padding: .5rem 1rem;
   width: 20rem;
-  /* height: 12rem; */
+  height: 12rem;
   margin: 0 auto 1rem auto;
   /* cursor: pointer; */
 
@@ -33,14 +33,27 @@ const Slider = styled.div`
     font-size: 1rem;
   }
 
-  p:first-of-type {
+  a {
     font-size: .7rem;
     font-weight: 500;
     color: ${props => props.color};
+
+    :hover {
+      font-size: .8rem;
+      font-weight: 900;
+    }
   }
 
   p {
+    height: 2.4rem;
+    overflow: scroll;
     font-size: .8rem;
+    font-style: italic;
+    opacity: .9;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   div {
@@ -83,57 +96,25 @@ const Clientes = ({color}) => {
         <SwiperSlide>
           <Slider color={color}>
             <div>
-              <img src="https://user-images.githubusercontent.com/52588477/158433544-e869ce81-06fb-4792-9895-819b388d4377.jpg" alt="Foto do cliente" />
+              <img src="https://user-images.githubusercontent.com/52588477/165647874-556339f1-22a6-4021-b2f1-bf52015bc6ee.jpg" alt="Foto do cliente" />
               </div>
-            <h2>1 Jhon Doe</h2>
-            <p>Animaly Petshop</p>
-            <p>A really good job, all aspects of the roject were followed step by step and with good results.</p>
+            <h2>Juliana Landini</h2>
+            <a target="_blank" href="https://www.instagram.com/lalakidseteensjrp/" rel="noreferrer">Lalakids & Teen</a>
+            <p>Superou minhas expectativas! Permitiu meus clientes verem os meus produtos sem saírem de casa</p>
           </Slider>
         </SwiperSlide>
 
         <SwiperSlide>
           <Slider color={color}>
             <div>
-              <img src="https://user-images.githubusercontent.com/52588477/158433544-e869ce81-06fb-4792-9895-819b388d4377.jpg" alt="Foto do cliente" />
+              <img src="https://user-images.githubusercontent.com/52588477/165647876-07e0ceba-8eb3-43e1-a060-44d20b3e449b.jpg" alt="Foto do cliente" />
               </div>
-            <h2>1 Jhon Doe</h2>
-            <p>Animaly Petshop</p>
+            <h2>Aline Dias</h2>
+            <a target="_blank" href="instagram.com" rel="noreferrer">Animaly Petshop | Restaurante Seu Ailton</a>
             <p>A really good job, all aspects of the roject were followed step by step and with good results.</p>
           </Slider>
         </SwiperSlide>
 
-        <SwiperSlide>
-          <Slider color={color}>
-            <div>
-              <img src="https://user-images.githubusercontent.com/52588477/158433544-e869ce81-06fb-4792-9895-819b388d4377.jpg" alt="Foto do cliente" />
-              </div>
-            <h2>1 Jhon Doe</h2>
-            <p>Animaly Petshop</p>
-            <p>A really good job, all aspects of the roject were followed step by step and with good results.</p>
-          </Slider>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Slider color={color}>
-            <div>
-              <img src="https://user-images.githubusercontent.com/52588477/158433544-e869ce81-06fb-4792-9895-819b388d4377.jpg" alt="Foto do cliente" />
-              </div>
-            <h2>1 Jhon Doe</h2>
-            <p>Animaly Petshop</p>
-            <p>A really good job, all aspects of the roject were followed step by step and with good results.</p>
-          </Slider>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Slider color={color}>
-            <div>
-              <img src="https://user-images.githubusercontent.com/52588477/158433544-e869ce81-06fb-4792-9895-819b388d4377.jpg" alt="Foto do cliente" />
-              </div>
-            <h2>1 Jhon Doe</h2>
-            <p>Animaly Petshop</p>
-            <p>A really good job, all aspects of the roject were followed step by step and with good results.</p>
-          </Slider>
-        </SwiperSlide>
       </Swiper>
     </ClientesContainer>
   )

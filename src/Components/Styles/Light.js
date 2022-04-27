@@ -1,4 +1,4 @@
-export default {
+const light = {
   title: 'light',
   colors: {
     primary: '#F4F4FE',
@@ -7,5 +7,7 @@ export default {
     textOpacity: "rgba(51, 51, 51, .8)",
     border: '#eee'
   }
-}
+};
+
+export default light;
 

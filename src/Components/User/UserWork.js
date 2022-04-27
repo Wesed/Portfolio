@@ -14,6 +14,15 @@ const UserWork = ({color}) => {
       />
 
       <UserItem
+        title="Analista de suporte"
+        description="Auxiliar na migração de sistemas e treinar funcionários"
+        company="Raízen"
+        type="Tercerizado"
+        date="Março 2022"
+        color={color}
+      />
+
+      <UserItem
         title="Dogs"
         description="Rede social fictícia para cães"
         company="Projeto pessoal"

@@ -118,9 +118,11 @@ const SkillsShortcuts = ({color}) => {
       <Skills>
             {skills.map((item, index) => 
             <DivItem key={index} color={color}>
-              <ListItem href={item.href} data-name={item.name}> 
-              <a href={item.href}>{item.content}</a>
-            </ListItem> 
+              <a target="_blank" rel="noreferrer" href={item.href}>
+                <ListItem href={item.href} data-name={item.name}> 
+                {item.content}
+              </ListItem> 
+              </a>
             </DivItem>)}
       </Skills>
     </>

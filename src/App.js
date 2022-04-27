@@ -17,10 +17,6 @@ function App() {
   const [theme, setTheme] = React.useState(Dark);
   const [color, setColor] = React.useState('#FE3525');
 
-  function handleChange() {
-    setTheme(theme.title === "light" ? Dark : Light);
-  }
-
   return (
     <div>
       {/* O theme provider atua como o useContext, ele serve pra passar o theme pra todos os outros elementos filho */}
