@@ -7,6 +7,7 @@ import { ReactComponent as Exp } from "../Assets/book2.svg";
 import { ReactComponent as Portfolio } from "../Assets/portfolio.svg";
 import { ReactComponent as Message } from "../Assets/message2.svg";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import UseMedia from './Hooks/UseMedia';
 
 const Nav = styled.nav`
   position: fixed;
@@ -54,7 +55,12 @@ const NavMenu = styled.ul`
 
 const Navbar = ({color, theme}) => {
   let themeMode = theme.title;
+  const mobile = UseMedia('(max-width: 30rem)');
+  let offSet = 100;
 
+  if(mobile) {
+    offSet = 50;
+  }
   if(themeMode === 'light') {
     themeMode = 'rgba(51, 51, 51, 0.4)';
   } else {
@@ -65,27 +71,27 @@ const Navbar = ({color, theme}) => {
     <Nav theme={theme} themeMode={themeMode}>
         <NavMenu color={color}>
           <li>
-            <AnchorLink href="#home" offset="100">
+            <AnchorLink href="#home" offset={offSet}>
               <Home/>
             </AnchorLink>
           </li>
           <li>
-            <AnchorLink href="#user" offset="100">
+            <AnchorLink href="#user" offset={offSet}>
               <User/>
             </AnchorLink>
           </li>
           <li>
-            <AnchorLink href="#exp" offset="100">
+            <AnchorLink href="#exp" offset={offSet}>
               <Exp/>
             </AnchorLink>
           </li>
           <li>
-            <AnchorLink href="#portfolio" offset="100">
+            <AnchorLink href="#portfolio" offset={offSet}>
               <Portfolio/>
             </AnchorLink>
           </li>
           <li>
-            <AnchorLink href="#clients" offset="100">
+            <AnchorLink href="#clients" offset={offSet}>
               <Users/>
             </AnchorLink>
           </li>

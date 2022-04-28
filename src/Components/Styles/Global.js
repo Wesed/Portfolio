@@ -101,15 +101,6 @@ img {
   }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  color: ${props => props.color};
-}
-
-.swiper-pagination-bullet-active {
-  background: ${props => props.color};
-}
-
 @keyframes arrowUp {
   to {
     bottom: 25px;

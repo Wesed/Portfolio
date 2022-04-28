@@ -67,12 +67,26 @@ const Slider = styled.div`
 
 const Projetos = ({color}) => {
   const media = UseMedia('(max-width: 30rem)');
-  let slidesPerView = 'auto';
-  let loop = true;
-  if(media === true) {
-    slidesPerView = 1;
-    loop = false;
-  }
+  let [slidesPerView, setSlides] = React.useState('auto');
+  let [loop, setLoop] = React.useState(null);
+
+  React.useEffect(() => {
+    if(media) {
+      setSlides(1);
+      setLoop(false);
+
+      
+      const elPrev = document.querySelector('.swiper-button-prev');
+      const elNext = document.querySelector('.swiper-button-next');
+      
+      elPrev.style.top = '30%';
+      elPrev.style.transform = 'translateY(-30%)';
+
+      elNext.style.top = "30%";
+      elNext.style.transform = 'translateY(-30%)';
+    }
+
+  }, [media]);
   
   return (
     <ProjetoContainer id="portfolio">
@@ -81,6 +95,7 @@ const Projetos = ({color}) => {
       </Title>
 
       <Swiper
+        initialSlide={0}      
         slidesPerView={slidesPerView}
         centeredSlides={true}
         loop={loop}

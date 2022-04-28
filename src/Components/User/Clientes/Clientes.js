@@ -77,6 +77,7 @@ const Clientes = ({color}) => {
   const media = UseMedia('(max-width: 30rem)');
   let slidesPerView = 2;
   if(media === true) slidesPerView = 1;
+  
   return (
     <ClientesContainer id="clients" className="container">
       <Title color={color} label="Feedback">
@@ -89,7 +90,6 @@ const Clientes = ({color}) => {
         centeredSlides={false}
         // loop={true}
         pagination={{ clickable: true }}
-        spaceBetween={-60}
         autoHeight={true}
         >
 

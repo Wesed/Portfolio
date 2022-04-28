@@ -66,7 +66,7 @@ const ContactField = styled.div`
       opacity: .8;
     }
     
-    a {
+    p:last-child {
       color: ${props => props.color};
       font-size: .8rem;
       font-weight: 900;
@@ -84,10 +84,13 @@ const ContactField = styled.div`
 `;
 
 const FormField = styled.form`
-  /* border: 1px solid blue; */
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: 30rem) {
+    width: calc(100vw - 4rem);
+  }
 
   a {
     align-self: start;
@@ -99,7 +102,6 @@ const FormField = styled.form`
     border-radius: 4px;
     border: 1px solid ${props => props.color};
     transition: .1s;
-
     color: ${props => props.theme.colors.text};
     font-size: 1rem;
     padding: 1rem;
@@ -135,38 +137,45 @@ const Contato = ({color}) => {
     <ContatoContainer id="contato" className='container'>
       <Title color={color} label="Olá">Contato</Title>
       <ContactField color={color}>
-        <div>
-          <Email />
-          {media ? <></>
-          : 
-          <>
-          <p>Email</p>
-          <p>dev.wfeduardo@gmail.com</p>
-          <a href="mailto:dev.wfeduardo@gmail.com">Enviar Mensagem</a>
-          </>}
-        </div>
 
-        <div>
-          <Messenger />
-          {media ? <></>
-          : 
-          <>
-          <p>Messenger</p>
-          <p>@weslleyfillipee</p>
-          <a target="_blank" rel="noreferrer" href="https://m.me/weslleyfillipee">Enviar mensagem</a>
-          </>}
-        </div>
+        <a href="mailto:dev.wfeduardo@gmail.com">
+          <div>
+            <Email />
+            {media ? <></>
+            : 
+            <>
+            <p>Email</p>
+            <p>dev.wfeduardo@gmail.com</p>
+            <p>Enviar Mensagem</p>
+            </>}
+          </div>
+        </a>
 
-        <div>
-          <Whatsapp />
-          {media ? <></>
-          : 
-          <>
-          <p>WhatsApp</p>
-          <p>+55 19 993844103</p>
-          <a target="_blank" rel="noreferrer" href="https://api.whatsapp.com/send?1=pt_BR&phone=5519993844103&text=Ola! Me interessei pelo seu portfolio!">Enviar mensagem</a>
-          </>}
-        </div>
+        <a target="_blank" rel="noreferrer" href="https://m.me/weslleyfillipee">
+          <div>
+            <Messenger />
+            {media ? <></>
+            : 
+            <>
+            <p>Messenger</p>
+            <p>@weslleyfillipee</p>
+            <p>Enviar mensagem</p>
+            </>}
+          </div>
+        </a>
+
+        <a target="_blank" rel="noreferrer" href="https://api.whatsapp.com/send?1=pt_BR&phone=5519993844103&text=Ola! Me interessei pelo seu portfolio!">
+          <div>
+            <Whatsapp />
+            {media ? <></>
+            : 
+            <>
+            <p>WhatsApp</p>
+            <p>+55 19 993844103</p>
+            <p>Enviar mensagem</p>
+            </>}
+          </div>
+        </a>
       </ContactField>
 
       <FormField ref={form} onSubmit={sendEmail} color={color}>
