@@ -72,7 +72,7 @@ const Slider = styled.div`
     padding: 0 .2rem 0 0;
     letter-spacing: .020rem;
     margin-top: .5rem;
-    height: 3.3rem;
+    height: 3.5rem;
     overflow-y: scroll;
     font-size: .8rem;
     font-style: italic;
@@ -124,7 +124,7 @@ const Clientes = ({color}) => {
               <h2>Juliana Landini</h2>
               <a target="_blank" href="https://www.instagram.com/lalakidseteensjrp/" rel="noreferrer">Lalakids & Teen</a>
             </div>
-            <p>Vou deixar meu Feedback dessa pessoa incrível,que tem uma inteligência de outro mundo,o meu site ficou mais do que esperado,ele superou minhas expectativas,tem um atendimento nota Mil,super indico o trabalho dele!</p>
+            <p>Vou deixar meu Feedback dessa pessoa incrível, que tem uma inteligência de outro mundo. O meu site ficou mais do que esperado, ele superou minhas expectativas, tem um atendimento nota Mil,super indico o trabalho dele!</p>
           </Slider>
         </SwiperSlide>
 
@@ -133,8 +133,10 @@ const Clientes = ({color}) => {
             <div>
               <img src="https://user-images.githubusercontent.com/52588477/165647876-07e0ceba-8eb3-43e1-a060-44d20b3e449b.jpg" alt="Foto do cliente" />
               </div>
-            <h2>Aline Dias</h2>
-            <a target="_blank" href="instagram.com" rel="noreferrer">Animaly Petshop</a>
+            <div>
+              <h2>Aline Dias</h2>
+              <a target="_blank" href="instagram.com" rel="noreferrer">Animaly Petshop</a>
+            </div>
             <p>Superou minhas expectativas! Permitiu meus clientes verem os meus produtos sem saírem de casa</p>
           </Slider>
         </SwiperSlide>
