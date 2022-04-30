@@ -36,10 +36,10 @@ const ProfileImg = styled.div`
     border: 1px solid transparent;
     transform: rotate(10deg);
     overflow: hidden;
+    transition: .5s;
 
     :hover {
       transform: rotate(0);
-      transition: .5s;
     }
 
   img {

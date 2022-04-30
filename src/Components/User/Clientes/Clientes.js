@@ -16,10 +16,10 @@ const ClientesContainer = styled.section`
 `;
 
 const Slider = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  /* flex-direction: column; */
   gap: .1rem;
-  /* border: 1px solid blue; */
   background: ${props => props.theme.colors.secondary};
   box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 30%); 
   border-radius: 10px;
@@ -27,14 +27,37 @@ const Slider = styled.div`
   width: 20rem;
   height: 12rem;
   margin: 0 auto 1rem auto;
-  /* cursor: pointer; */
+
+  div:first-child {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: .5rem;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.1rem;
+    align-items: center;
+  }
 
   h2 {
+    grid-column: 2;
+    grid-row: 1;
     font-size: 1rem;
   }
 
   a {
-    font-size: .7rem;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: .8rem;
     font-weight: 500;
     color: ${props => props.color};
 
@@ -45,28 +68,25 @@ const Slider = styled.div`
   }
 
   p {
-    height: 2.4rem;
-    overflow: scroll;
+    grid-column: 1 / -1;
+    padding: 0 .2rem 0 0;
+    letter-spacing: .020rem;
+    margin-top: .5rem;
+    height: 3.3rem;
+    overflow-y: scroll;
     font-size: .8rem;
     font-style: italic;
     opacity: .9;
 
     ::-webkit-scrollbar {
-      display: none;
+      background: ${props => props.theme.colors.text};
+      width: .2rem;
+      border-radius: .5rem;
     }
-  }
 
-  div {
-    /* border: 1px solid red; */
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: .5rem;
-
-    img {
-      width: 100%;
-      object-fit: cover;
+    ::-webkit-scrollbar-thumb {
+      background: ${props => props.color};
+      border-radius: .5rem;
     }
   }
 
@@ -95,12 +115,16 @@ const Clientes = ({color}) => {
 
         <SwiperSlide>
           <Slider color={color}>
+
             <div>
               <img src="https://user-images.githubusercontent.com/52588477/165647874-556339f1-22a6-4021-b2f1-bf52015bc6ee.jpg" alt="Foto do cliente" />
-              </div>
-            <h2>Juliana Landini</h2>
-            <a target="_blank" href="https://www.instagram.com/lalakidseteensjrp/" rel="noreferrer">Lalakids & Teen</a>
-            <p>Superou minhas expectativas! Permitiu meus clientes verem os meus produtos sem saírem de casa</p>
+            </div>
+
+            <div>
+              <h2>Juliana Landini</h2>
+              <a target="_blank" href="https://www.instagram.com/lalakidseteensjrp/" rel="noreferrer">Lalakids & Teen</a>
+            </div>
+            <p>Vou deixar meu Feedback dessa pessoa incrível,que tem uma inteligência de outro mundo,o meu site ficou mais do que esperado,ele superou minhas expectativas,tem um atendimento nota Mil,super indico o trabalho dele!</p>
           </Slider>
         </SwiperSlide>
 
@@ -110,8 +134,8 @@ const Clientes = ({color}) => {
               <img src="https://user-images.githubusercontent.com/52588477/165647876-07e0ceba-8eb3-43e1-a060-44d20b3e449b.jpg" alt="Foto do cliente" />
               </div>
             <h2>Aline Dias</h2>
-            <a target="_blank" href="instagram.com" rel="noreferrer">Animaly Petshop | Restaurante Seu Ailton</a>
-            <p>A really good job, all aspects of the roject were followed step by step and with good results.</p>
+            <a target="_blank" href="instagram.com" rel="noreferrer">Animaly Petshop</a>
+            <p>Superou minhas expectativas! Permitiu meus clientes verem os meus produtos sem saírem de casa</p>
           </Slider>
         </SwiperSlide>
 
