@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import ConfigMenu from './Components/ConfigMenu';
 import Navbar from './Components/Navbar';
 import Header from './Components/Header/Header';
-import UserProfile from './Components/User/UserProfile';
+import User from './Components/User/UserProfile';
 import UserExperience from "./Components/User/UserExperience";
 import Projetos from './Components/User/Projetos/Projetos';
 import Clientes from './Components/User/Clientes/Clientes';
@@ -23,11 +23,7 @@ function App() {
           <GlobalStyle />
           <Header color={color}/>
           <ConfigMenu theme={theme}  setTheme={setTheme} color={color} setColor={setColor}/>
-          <UserProfile color={color}/> 
-           <UserExperience color={color} />
-          <Projetos color={color}/>
-          <Clientes color={color}/>
-          <Contato color={color}/>
+          <User color={color} />
           <Footer />
           <Navbar color={color} theme={theme}/>
       </ThemeProvider>
