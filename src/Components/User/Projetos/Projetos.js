@@ -120,6 +120,31 @@ const Projetos = ({color}) => {
                 <Slider opacity={.5} scale={.8}>
                   <img
                     src="https://user-images.githubusercontent.com/52588477/161609153-e3839cd3-f22f-4033-aa33-ea997cbde014.jpg"
+                    alt="Slide 2"
+                  />
+                </Slider>
+              )}
+            </>
+          )}
+        </SwiperSlide>
+
+        <SwiperSlide>
+          {({ isActive }) => (
+            <>
+              {isActive ? (
+                <Slider color={color} opacity={1} scale={1}>
+                  <img
+                    src="https://user-images.githubusercontent.com/52588477/166173390-f12aa151-17fc-420a-809d-a297c4bcbfea.jpg"
+                    alt="Slide 2"
+                  />
+                  <h2>Portfólio</h2>
+                  <p> Projeto criado para exibir os meus trabalhos, experiências e conhecimentos. </p>
+                  <a href="https://portfolio-wesed.vercel.app/" target="_blank" rel="noreferrer">Demo</a>
+                </Slider>
+              ) : (
+                <Slider opacity={.5} scale={.8}>
+                  <img
+                    src="https://user-images.githubusercontent.com/52588477/166173390-f12aa151-17fc-420a-809d-a297c4bcbfea.jpg"
                     alt="Slide 1"
                   />
                 </Slider>
@@ -134,19 +159,18 @@ const Projetos = ({color}) => {
               {isActive ? (
                 <Slider color={color} opacity={1} scale={1}>
                   <img
-                    src="https://user-images.githubusercontent.com/52588477/161609153-e3839cd3-f22f-4033-aa33-ea997cbde014.jpg"
-                    alt="Slide 1"
+                    src="https://user-images.githubusercontent.com/52588477/166174039-7a9a372b-e655-462a-a54a-c116a9f6d71e.jpg"
+                    alt="Slide 3"
                   />
-                  <h2>Dogs</h2>
-                  <p> O projeto Dogs é uma rede social fictícia para cachorros, foi
-                  desenvolvido durante os estudos de ReactJs. </p>
-                  <a href="https://dogs-git-master-wesed.vercel.app/login" target="_blank" rel="noreferrer">Demo</a>
+                  <h2>Animaly Petshop</h2>
+                  <p> Projeto em desenvolvimento para uma rede de pet shops. O cliente deseja, além de gerenciá-los de forma remota, exibir para seus usuários os produtos e serviços à disposição.</p>
+                  <a href="https://portfolio-wesed.vercel.app" target="_blank" rel="noreferrer">Demo</a>
                 </Slider>
               ) : (
                 <Slider opacity={.5} scale={.8}>
                   <img
-                    src="https://user-images.githubusercontent.com/52588477/161609153-e3839cd3-f22f-4033-aa33-ea997cbde014.jpg"
-                    alt="Slide 1"
+                    src="https://user-images.githubusercontent.com/52588477/166174039-7a9a372b-e655-462a-a54a-c116a9f6d71e.jpg"
+                    alt="Slide 3"
                   />
                 </Slider>
               )}
@@ -160,25 +184,25 @@ const Projetos = ({color}) => {
               {isActive ? (
                 <Slider color={color} opacity={1} scale={1}>
                   <img
-                    src="https://user-images.githubusercontent.com/52588477/161609153-e3839cd3-f22f-4033-aa33-ea997cbde014.jpg"
-                    alt="Slide 1"
+                    src="https://user-images.githubusercontent.com/52588477/166174325-37c69d6d-9c01-428b-80fb-3c93fec0f5c2.jpg"
+                    alt="Slide 3"
                   />
-                  <h2>Dogs</h2>
-                  <p> O projeto Dogs é uma rede social fictícia para cachorros, foi
-                  desenvolvido durante os estudos de ReactJs. </p>
-                  <a href="https://dogs-git-master-wesed.vercel.app/login" target="_blank" rel="noreferrer">Demo</a>
+                  <h2>Lalakids & Teen</h2>
+                  <p> Website desenvolvido durante a pandemia, afim de permitir aos usuários ver os produtos sem o risco de ir até a loja.</p>
+                  <a href="https://portfolio-wesed.vercel.app" target="_blank" rel="noreferrer">Demo</a>
                 </Slider>
               ) : (
                 <Slider opacity={.5} scale={.8}>
                   <img
-                    src="https://user-images.githubusercontent.com/52588477/161609153-e3839cd3-f22f-4033-aa33-ea997cbde014.jpg"
-                    alt="Slide 1"
+                    src="https://user-images.githubusercontent.com/52588477/166174325-37c69d6d-9c01-428b-80fb-3c93fec0f5c2.jpg"
+                    alt="Slide 3"
                   />
                 </Slider>
               )}
             </>
           )}
         </SwiperSlide>
+
       </Swiper>
     </ProjetoContainer>
   );

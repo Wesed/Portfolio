@@ -72,7 +72,6 @@ const Slider = styled.div`
     padding: 0 .2rem 0 0;
     letter-spacing: .020rem;
     margin-top: .5rem;
-    height: 3.5rem;
     overflow-y: scroll;
     font-size: .8rem;
     font-style: italic;
@@ -137,7 +136,7 @@ const Clientes = ({color}) => {
               <h2>Aline Dias</h2>
               <a target="_blank" href="instagram.com" rel="noreferrer">Animaly Petshop</a>
             </div>
-            <p>Superou minhas expectativas! Permitiu meus clientes verem os meus produtos sem saírem de casa</p>
+            <p>Superou minhas expectativas! Me permitiu gerenciar meus petshops sem sair de casa!</p>
           </Slider>
         </SwiperSlide>
 

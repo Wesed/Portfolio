@@ -156,7 +156,7 @@ const User = ({color}) => {
       <ProfileImg color={hex2}>
         <div>
           <img
-            src="https://user-images.githubusercontent.com/52588477/158433544-e869ce81-06fb-4792-9895-819b388d4377.jpg"
+            src="https://user-images.githubusercontent.com/52588477/166173002-869c44b0-e83b-40f2-8ed8-f370889d590a.jpg"
             alt="profile"
           />
         </div>
