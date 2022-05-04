@@ -101,14 +101,16 @@ img {
   }
 }
 
-@keyframes arrowUp {
-  to {
-    bottom: 25px;
-  }
+ .animeLeft {
+   transform: translateX(-20px);
+   opacity: 0;
+   animation: animeLeft .3s forwards;
+ }
 
-  from {
-    bottom: 35px;
-  }
-}
-
+ @keyframes animeLeft {
+   to {
+     transform: initial;
+     opacity: initial;
+   }
+ }
 `

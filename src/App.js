@@ -4,7 +4,6 @@ import { GlobalStyle } from "./Components/Styles/Global";
 import Dark from "./Components/Styles/Dark";
 import { ThemeProvider } from "styled-components";
 import ConfigMenu from './Components/ConfigMenu';
-import Navbar from './Components/Navbar';
 import Header from './Components/Header/Header';
 import User from './Components/User/User';
 import Footer from './Components/Footer/Footer';
@@ -20,12 +19,11 @@ function App() {
       <ThemeProvider theme={theme}>
           <GlobalStyle />
           <Header color={color}/>
-          <Navbar color={color} theme={theme}/>
           <ConfigMenu theme={theme}  setTheme={setTheme} color={color} setColor={setColor}/>
 
           <Routes>
-            <Route path="/" element={<User color={color}/>} />
-            <Route path="projeto/:titulo" element={<Detalhes/>} />
+            <Route path="/" element={<User theme={theme} color={color}/>} />
+            <Route path="projeto/:titulo" element={<Detalhes color={color}/>} />
           </Routes>
 
           <Footer />
